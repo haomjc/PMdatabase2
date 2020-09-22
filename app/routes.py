@@ -76,7 +76,7 @@ def user(username):
 
 @app.route('/show_add_user')
 def show_add_user():
-    return render_template('show_add_user.html')
+    return render_template('pages/test/show_add_user.html')
 
 
 @app.route("/do_add_user", methods=['POST'])
@@ -101,7 +101,7 @@ def do_add_user():
 def show_users():
     sql = "select id,name from user"
     datas = db_manage.query_data(sql)
-    return render_template("show_users.html", datas=datas)
+    return render_template("pages/test/show_users.html", datas=datas)
 
 
 @app.route("/show_user/<user_id>")
@@ -109,7 +109,7 @@ def show_user(user_id):
     sql = "select * from user where id=" + user_id
     datas = db_manage.query_data(sql)
     user = datas[0]
-    return render_template("show_user.html", user=user)
+    return render_template("pages/test/show_user.html", user=user)
 
 
 @app.route("/show_echarts")
@@ -119,7 +119,7 @@ def show_echarts():
             .add_xaxis(["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"])
             .add_yaxis("商家A", [5, 20, 36, 10, 75, 90])
     )
-    return render_template("show_echarts.html",
+    return render_template("pages/test/show_echarts.html",
                            bar_options=bar.dump_options()
                            )
 
@@ -157,7 +157,7 @@ def show_myecharts():
     pie = get_pie()
     bar = get_bar()
 
-    return render_template("show_myecharts.html",
+    return render_template("pages/test/show_myecharts.html",
                            pie_options=pie.dump_options(),
                            bar_options=bar.dump_options()
                            )

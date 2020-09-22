@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base_menu.html" %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
-    <title>查看用户列表</title>
+    <title>Title</title>
 </head>
 <body>
 <h1>查看用户列表</h1>
@@ -16,13 +16,10 @@
     <tr>
         <td>{{user["id"]}}</td>
         <td>{{user["name"]}}</td>
-        <td><a href="/show_user/{{user[" id"]}}">查看详情</a></td>
-
-
+        <td><a href="/show_user/{{user["id"]}}">查看详情</a></td>
     </tr>
-    >
-
-
     {% endfor %}
+</table>
 </body>
-</html>
+
+{% endblock %}

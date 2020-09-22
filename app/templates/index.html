@@ -156,7 +156,7 @@
                 <i class="mdi mdi-settings text-primary"></i>设置
               </a>
 
-        {% block content %}{% endblock %}
+        {% block body %}{% endblock %}
 
 
             </div>
@@ -172,6 +172,20 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="mdi mdi-account menu-icon"></i>
+              <span class="menu-title">用户登录页</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('login')}}"> 登录 </a></li>
+              </ul>
+            </div>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('index')}}">
               <i class="mdi mdi-home menu-icon"></i>
@@ -230,18 +244,7 @@
               <span class="menu-title">链接到供应商</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="mdi mdi-account menu-icon"></i>
-              <span class="menu-title">用户登录页</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/login"> 登录 </a></li>
-              </ul>
-            </div>
-          </li>
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#document" aria-expanded="false" aria-controls="document">
               <i class="mdi mdi-file-document-box-outline menu-icon"></i>
