@@ -1,0 +1,1515 @@
+{% extends "base_menu.html" %}
+{% block content %}
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-12 grid-margin">
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <div class="d-flex align-items-end flex-wrap">
+                                <div class="mr-md-3 mr-xl-5">
+                                    <h2>粉末冶金数据库</h2>
+                                    <b>Material Designation Codes</b></td></tr></table><br>
+                                    <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                                        <tr>
+                                            <td valign="top" class="formtext">
+
+                                                <span class="formtextlge"><b>CONVENTIONAL PM MATERIAL DESIGNATIONS :</b></span><br><br>In
+                                                this database, where applicable, materials are referred to by codes
+                                                based on those used in ISO 5755:2001 and MPIF Standard 35 for P/M
+                                                Structural Parts. Only the sections of the standard codes that relate
+                                                specifically to chemical composition are used in this database; the
+                                                suffixes that relate to minimum strength level and heat treatment
+                                                condition are omitted.<br>
+                                                <br>
+                                                The bases of the standard codes are described as follows:
+                                                <br><br>
+                                                <span class="formtextlge"><b>ISO 5755:2001 Material Designation Codes</b></span><br><br>
+                                                <b>(1) Structure of material designation codes</b><br><br>
+                                                The codes based on the ISO 5755 system comprise two groups as
+                                                follows:<br>
+                                                <br><b>First group</b><br>
+                                                <br>The first group consists of one to three capital letters, describing
+                                                the base metal and ways of adding alloying elements:<br>
+                                                <br>
+                                                F = Plain iron powder or iron powder with admixed alloying additives<br>
+                                                FD = Iron powder with diffusion-alloyed additives<br>
+                                                FL = Pre-alloyed steel powder<br>
+                                                FX = Copper-infiltrated steel<br>
+                                                C = Copper powder with admixed alloying additives<br>
+                                                CL = Pre-alloyed copper-base powder<br>
+                                                FLD = Pre-alloyed steel powder with diffusion-alloyed additives (this
+                                                will be used in future revisions)<br>
+                                                FLA = Pre-alloyed steel powder with admixed alloying additives (this
+                                                will be used in future revisions)<br>
+                                                <br>
+                                                <b>Second group</b><br>
+                                                <br>
+                                                The second group consists of two to six alpha-numeric characters with
+                                                two digits for the content of dissolved (combined) carbon without a
+                                                decimal point (except for copper-based materials and stainless steels)
+                                                e.g. 03 = 0.3%C. The third position in this group will be the capital
+                                                letter assigned to the alloying element with the highest content (if
+                                                any) followed by the content with one or two digits, e.g. 05 = 0.5%, 10
+                                                = 10%, 2 = 2.0% of the element in question. Finally this group ends with
+                                                the capital letter assigned to the element with the second highest
+                                                content (if any) but without any indication of the content.<br>
+                                                <br>
+                                                The groups within the material code are separated by a hyphen.<br>
+                                                <br>
+                                                <b>(2) Letters assigned to alloying elements</b><br>
+                                                <br>
+                                                Letters assigned to alloying elements are as follows:
+
+                                                C = Copper; G = Graphite; M = Molybdenum, N = Nickel; P = Phosphorus; T
+                                                = Tin; Z = Zinc.<br>
+                                                <br>
+                                                <b>(3) Examples of the designation system</b><br>
+                                                <br>
+
+                                                EXAMPLE 1: <b>C-T10</b> is a copper-based alloy with 10% added tin.<br>
+                                                <br>
+                                                EXAMPLE 2: <b>F-08C2</b> is an iron-based material with 0.8% carbon, 2%
+                                                copper.<br>
+                                                <br>
+                                                EXAMPLE 3: <b>FD-05N4C</b> is an iron-based alloy with 0.5% carbon and
+                                                diffusion-alloyed additions of nickel (4%) and copper.<br>
+                                                <br>
+                                                EXAMPLE 4: <b>FL-05N2M</b> is a pre-alloyed nickel (2%) and molybdenum
+                                                steel with 0.5% carbon.<br>
+                                                <br>
+                                                EXAMPLE 5: <b>FX-08C20</b> is a copper infiltrated iron-base
+                                                material.<br>
+                                                <br>
+                                                EXAMPLE 6: <b>FL-304</b> is a type 304 stainless steel. <br>
+                                                <br>
+                                                NOTE The materials designated FLA may have elemental additions to the
+                                                pre-alloyed base powder. In these circumstances the elemental additions
+                                                will be shown as a third group.<br><br>
+
+                                                As an example FLA-05M2-N4C2 would be a pre-alloyed nominal 2% molybdenum
+                                                steel powder with 0,5% carbon, to which has been added 4% nickel and 2%
+                                                copper in elemental form.<br><br>
+
+                                                <span class="formtextlge"><b>MPIF Standard 35 Material Code Designations</b></span><br>
+                                                <br>
+                                                The codes based on the MPIF Standard 35 for structural P/M parts define
+                                                a specific material as to chemistry. For example, FC-0208 is a P/M
+                                                copper steel material containing a nominal 2% copper and 0.8% combined
+                                                carbon.<br>
+                                                <br>
+                                                In the coding system, the prefix letters denote the general type of
+                                                material. For example, the prefix "CT" represents copper (C) and tin (T)
+                                                which is known as bronze.<br>
+                                                <br>
+                                                <div align="center">
+                                                    <span class="formtextlge"><b>Prefix Letter Code</b></span>
+
+                                                    <table border=1 cellspacing=0 cellpadding=0>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">A</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Aluminum</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">G</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Free graphite</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">C</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Copper</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">M</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Manganese</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">CT</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Bronze</span></font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">N</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Nickel</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">CNZ</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Nickel Silver</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">P</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Lead</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">CZ</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Brass</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">S</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Silicon</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">F</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Iron</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">SS</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Stainless Steel</span></font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">FC</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Iron-Copper or Copper Steel</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">&nbsp;</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">&nbsp;</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">FD</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Diffusion Alloyed Steel</span></font>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">T</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Tin</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">FL</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Prealloyed Ferrous material except
+                                                                    SS</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">U</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Sulfur</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">FN</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Iron-Nickel or Nickel Steel</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Y</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Phosphorus</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">FX</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Copper Infiltrated Iron or Steel</font>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Z</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Zinc</font></p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+
+                                                </div>
+                                                <br><br>
+                                                <b>Prefix and Four Digit Code</b><br>
+                                                <br>
+                                                The four digits following the prefix letter code refer to the
+                                                composition of the material.<br>
+                                                <br>
+                                                In nonferrous materials, the first two numbers in the four digit series
+                                                designate the percentage of the major alloying constituent. The last two
+                                                numbers of the four digit series designate the percentage of the minor
+                                                alloying constituent.<br>
+                                                <br>
+                                                For improved machinability lead is sometimes the third alloying element
+                                                in a nonferrous alloy system. Lead will only be indicated by the letter
+                                                "P" in the prefix. The percentage of lead or any other minor alloying
+                                                element which happens to be excluded from the four digit nomenclature,
+                                                is represented in the "Chemical Composition" which appears with each
+                                                standard material. Illustration of P/M nonferrous material designation
+                                                coding:<br><br>
+                                                <div align="center"><img src="imageservlet?name=epma_desig_002"
+                                                                         align="middle"></div>
+                                                <br><br>
+                                                In ferrous materials, the major alloying elements (except combined
+                                                carbon) are included in the prefix letter code. Other elements are
+                                                excluded from the code but are represented in the "Chemical Composition"
+                                                which appears with each Standard material. The first two digits of the
+                                                four-digit code indicate the percentage of the major alloying
+                                                constituent present.<br>
+                                                <br>
+                                                Combined carbon content in ferrous materials is designated by the last
+                                                two numbers in the four-digit series. The carbon content up to and
+                                                including 0.3% is considered as zero; higher contents are included in
+                                                ranges and coded as follows:<br>
+                                                <br>
+                                                <div align="center">
+                                                    <table border=1 cellspacing=0 cellpadding=0>
+                                                        <tr>
+                                                            <td>
+                                                                <p><b><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Carbon</font></b><b><font
+                                                                        face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">Ranges</font></b></p></font>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2"><b>Code Designation</b></p></font>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">0.0% - 0.3%</p></font>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">00</span></p></font>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">0.3% - 0.6%*</p></font>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">05</p></font>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">0.6% - 0.9%</p></font>
+                                                            </td>
+                                                            <td width=156 valign=top>
+                                                                <p><font face="Arial, Helvetica, sans-serif"> <font
+                                                                        size="2">08</p></font>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <p><font face="Arial, Helvetica, sans-serif"> <font size="2">*
+                                                        Exception: Carbon range for the FL-series is 0.4 - 0.7%</font>
+                                                    </p>
+                                                </div>
+                                                <br><br>
+                                                The range of carbon that is metallurgically combined is indicated in the
+                                                coding system. Illustration of P/M ferrous material designation
+                                                coding:<br><br>
+                                                <div align="center"><img src="imageservlet?name=epma_desig_004"></div>
+                                                <br><br>
+                                                In the case of P/M stainless steels and P/M prealloyed low alloy steels,
+                                                the four-digit series is replaced with a designation derived from
+                                                modifications of the American Iron and Steel Institute alloy coding
+                                                system, e.g., SS-316L, FL-4605.<br>
+                                                <br>
+                                                When a P/M prealloyed low alloy steel powder is modified with elemental
+                                                additions, a three or four alpha-numeric designator is used, e.g.,
+                                                FLN-4205.<br><br>
+                                                <div align="center">
+<span class="formtextlge"><b>Examples of P/M Material Designation Coding  based on MPIF
+Standard 35</b></span>
+
+                                                    <table border=1 cellspacing=0 cellpadding=0>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2"><b>Material</b></font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2"><b>Compositions by Percent</b></font>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2"><b>Material Code</b></font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Bronze</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Cu-90, Sn-10</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">CT-1000</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Nickel Silver</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Cu-64, Ni-18, Zn-18</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">CNZ-1818</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Nickel Silver</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Cu-64, Ni-18, Zn-16, Pb-2</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">CNZP-1816</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Brass</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Cu-90, Zn-10</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2"> CZ-1000</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Brass</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Cu-78, Zn-20, Pb-2</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">CZP-2002</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Iron</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Fe-99, C-0.2</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">F-0000</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Steel</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Fe-98, C-0.8</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">F-0008</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Copper Steel</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Fe-96, Cu-2, C-0.8</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">FC-0208</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Nickel Steel</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Fe-96, Ni-2, C-0.5</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">FN-0205</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Infiltrated Iron</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Fe-78, Cu-20</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2"> FX-2000</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Infiltrated Steel</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">Fe-77, Cu-20, C-0.8</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">FX-2008</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Stainless Steel (austenitic)</font>
+                                                                </p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">AISI 316 (modified)</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">SS-316N1</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M Stainless Steel
+                                                                    (martensitic)</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">AISI 410 (modified)</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">SS-410</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M 4600 Steel (prealloyed)</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">AISI 4600 (modified), C-0.5</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">FL-4605</font></p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">P/M 4200 Steel
+                                                                    (prealloyed+addition)</font></p>
+                                                            </td>
+                                                            <td>
+                                                                <p><font face="Arial, Helvetica, sans-serif"><font
+                                                                        size="2">AISI 4200 (modified), Ni-1.5, C-0.5
+                                                                </font></p>
+                                                            </td>
+                                                            <td><p><font face="Arial, Helvetica, sans-serif"><font
+                                                                    size="2"> FLN-4205</font></p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <br><br>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <br>
+                                    <br>
+                                    <span class="formtextlge"><b>MIM MATERIAL GRADE DESIGNATIONS :</b></span><br><br>The
+                                    2007 edition of MPIF Standard 35 for Metal Injection Molded Parts currently covers a
+                                    range of low alloy steels, stainless steels and soft magnetic alloy grades (see
+                                    Table below), but work is underway to increase its scope. Values in the table are
+                                    expressed as percentage of nominal chemical composition .
+                                    <br><br>
+
+                                    <div align="center">
+<span class="formtextlge"><b>Examples of MIM Material Designation Coding based on MPIF
+Standard 35</b></span>
+
+                                        <table border=1 cellspacing=0 cellpadding=0>
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>Material
+                                                        Designation Code</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Fe</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Ni</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Mo</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>C</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Si</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Cr</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Nb+Ta</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>Mn(max)</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Co</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>V</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2"><b>Cu</b></font></p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>Low
+                                                        Alloy Steels :</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-2200</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">1.5-2.5</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.5
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.1
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-2700</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">6.5-8.5</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.5
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.1
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-4605</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">1.5-2.5</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">0.2-0.5</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">0.4-0.6</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>Stainless
+                                                        Steels :</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-316L</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">10-14</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">2-3</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.03
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">16-18</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">2.0</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-420</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">&nbsp;</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">0.15-0.4</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">12-14</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">1.0</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-430L</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.05
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">16-18</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">1.0</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">MIM-17-4
+                                                        PH</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">3-5</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.07
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">15.5-17.5</font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.15-0.45</font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">1.0</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">3-5</font></p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>Soft
+                                                        Magnetic Alloys :</b></font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-2200</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">1.5-2.5</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.5
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.1
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">MIM-Fe-3%Si</font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.05
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">2.5-3.5</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">&nbsp;</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">MIM-Fe50%Ni</font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">49-51</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">&nbsp;</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.05
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">MIM-Fe50%Co</font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.05
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">48-50</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">2.5
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">MIM-430L</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">Bal.</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">0.05
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2">1.0
+                                                        max</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">16-18</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font
+                                                            size="2">1.0</font></p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p><font face="Arial, Helvetica, sans-serif"><font size="2"><b>&nbsp;</b></font>
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+                                    </div>
+                                    <br><br>
+
+
+                                    The ISO committee is still developing MIM grade designations and, to date, none have
+                                    been formally adopted.
+                                    <br><br>
+                                    Therefore, where applicable, MIM grades in the database are referred to by the MPIF
+                                    designation codes.
+                                    <br><br>
+                                    For MIM grades not covered by MPIF Standard 35, designation codes in the database
+                                    have a MIM- prefix, followed by either:
+                                    <br><br>
+                                    <li>An equivalent wrought code. For ferrous materials, including stainless steels,
+                                        these codes have generally been drawn from the AISI/SAE specifications
+                                    </li>
+                                    <br>
+                                    or
+                                    <br>
+                                    <li>A descriptor based directly on the material composition</li>
+                                    <br>
+                                    </tr>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+{% endblock %}

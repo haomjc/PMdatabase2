@@ -1,0 +1,28 @@
+{% extends "base_menu.html" %}
+{% block content %}
+
+<div class="col-xs-6 col-sm-6">
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">选择制造方式</strong>
+        </div>
+        <div class="card-body">
+
+            <select data-placeholder="Choose a Country..." class="standardSelect"
+                    tabindex="1">
+
+                <option value="United States">传统PM(粉末冶金)</option>
+                <option value="United Kingdom">MIM(金属注射成型)</option>
+
+            </select>
+
+            <button type="提交" class="btn btn-success btn-sm">
+                <i class="fa fa-dot-circle-o"></i> 提交
+            </button>
+            <button type="重置" class="btn btn-success btn-sm">
+                <i class="fa fa-ban"></i> 重置
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
