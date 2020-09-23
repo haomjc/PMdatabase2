@@ -151,6 +151,9 @@
 
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item"                  href="{{ url_for('login') }}" >
+                <i class="mdi mdi-login text-primary"></i>登录
+              </a>
 
               <a class="dropdown-item" >
                 <i class="mdi mdi-settings text-primary"></i>设置
@@ -173,18 +176,18 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
 
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="mdi mdi-account menu-icon"></i>
-              <span class="menu-title">用户登录页</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('login')}}"> 登录 </a></li>
-              </ul>
-            </div>
-          </li>
+<!--          <li class="nav-item">-->
+<!--            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">-->
+<!--              <i class="mdi mdi-account menu-icon"></i>-->
+<!--              <span class="menu-title">用户登录页</span>-->
+<!--              <i class="menu-arrow"></i>-->
+<!--            </a>-->
+<!--            <div class="collapse" id="auth">-->
+<!--              <ul class="nav flex-column sub-menu">-->
+<!--                <li class="nav-item"> <a class="nav-link" href="{{url_for('login')}}"> 登录 </a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </li>-->
 
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('index')}}">
@@ -301,7 +304,11 @@
                   <button type="button" class="btn btn-light bg-white btn-icon mr-3 mt-2 mt-xl-0">
                     <i class="mdi mdi-plus text-muted"></i>
                   </button>
-                  <button class="btn btn-primary mt-2 mt-xl-0">查看已选数据</button>
+                  <button class="btn btn-primary mt-2 mt-xl-0" href="{{ url_for('help_on_plotting') }}">绘图 帮助</button>
+                  <button class="btn btn-primary mt-2 mt-xl-0" href="{{ url_for('help_on_reports') }}">报告 帮助</button>
+                  <button class="btn btn-primary mt-2 mt-xl-0" href="{{ url_for('help') }}">帮助</button>
+                  <button class="btn btn-primary mt-2 mt-xl-0" href="{{ url_for('view_data_cart') }}">查看已选数据</button>
+                  <button class="btn btn-primary mt-2 mt-xl-0" href="{{ url_for('empty_data_cart') }}">清空已选数据</button>
                 </div>
               </div>
             </div>

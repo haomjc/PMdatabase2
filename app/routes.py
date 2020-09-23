@@ -201,3 +201,28 @@ def manufacturingconditions():
 @app.route("/searchbymechanicalproperties")
 def searchbymechanicalproperties():
     return render_template("pages/searchbyproperties/searchbymechanicalproperties.html")
+
+
+@app.route("/help_on_plotting")
+def help_on_plotting():
+    return render_template("pages/help/help_on_plotting.html")
+
+
+@app.route("/help_on_reports")
+def help_on_reports():
+    return render_template("pages/help/help_on_reports.html")
+
+
+@app.route("/help")
+def help():
+    return render_template("pages/help/help.html")
+
+
+@app.route("/view_data_cart")
+def view_data_cart():
+    return render_template("pages/data/view_data_cart.html")
+
+
+@app.route("/empty_data_cart")
+def empty_data_cart():
+    return render_template("pages/data/empty_data_cart.html")
