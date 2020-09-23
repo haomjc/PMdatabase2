@@ -1,10 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base_menu.html" %}
+{% block content %}
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <base target="_self">
+    <title>nCode Automation</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script language="JavaScript" src="../js/dropdown.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style/progressbar.css">
 </head>
-<body>
+<body class="margin claro" onhelp="return nCodeHelpInWindow();">
+<div id="loading_container_1" style="display: none;">
+    <div id="loading_overlay_1">
+        <div id="overlay_inner_1"><img src="../images/loaderb16.gif" height="16px" id="loaderimg" alt="Missing Image">&nbsp;&nbsp;Processing...
+        </div>
+    </div>
+</div>
+<script src="../js/progressbar.js"></script>
+<script src="../js/datepicker/moment.min.js"></script>
+<script src="../js/datepicker/pikaday.js"></script>
+<script>
+    var thecontextguid= 'null'; var objrefok_off = new Image(); objrefok_off.src="../images/b-objrefok.gif"; var objrefok_on = new Image(); objrefok_on.src="../images/b-objrefok-red.gif";var objrefoff = new Image();objrefoff.src="../images/b-objref.gif";var objrefon = new Image();objrefon.src="../images/b-objref2.gif";function onTree(field,showfield,imageid,seltype,typeList){objrefbutton = imageid; objrefbutton.src = objrefon.src;container=field;container2=showfield;top.selectflag=true;top.selectType=seltype;top.typeList = typeList;return false;}function selectOff(){top.selectflag=false;objrefbutton.src = objrefoff.src;}function loadList(types, field, showfield){container = field; container2=showfield; var strURL = "processservlet2?process=__core22_ListObjectType&step=-1&objguid=null&types=" + types;window.open(strURL,"thispopup","toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=0,width=600,height=500");}function updateObjRef(guidvalues,namevalues){var ians_fix = top.main.document.getElementsByName('languageApplet');if(ians_fix == null || ians_fix.length == 0){if(checkSelfRef(guidvalues)){if (namevalues !=" " && !checkDuplicate(guidvalues)){var thisvalue = new Option(namevalues,guidvalues);container2.options[container2.options.length]=thisvalue;}var hiddenvalue ="";for (var i=0; i < container2.options.length;i++){if (i!=0)hiddenvalue+=",";hiddenvalue+=container2.options[i].value;}container.value = hiddenvalue;}else{alert ('An object cannot create a reference to itself');}}else{top.tree.nav_top.updateObjRef(guidvalues,namevalues);}}function checkSelfRef(guidvalues){if (guidvalues == thecontextguid){ return false;}else{return true;}}function removeLabel(spanid){var node= document.getElementById(spanid);var children = node.childNodes;for (i=0;i<children.length;i++){node.removeChild(children[i]);}}function updateGuidSelect(guidvalue,namevalue){container2.value = namevalue;container.value = guidvalue;}function deleteObjRef(field,showfield){for (var i=0;i < showfield.options.length;i++){var current = showfield.options[i];if (current.selected){showfield.options[i] = null;i--;}}var hiddenvalue="";for (var i=0;i < showfield.options.length;i++){if (i !=0){hiddenvalue+=",";}hiddenvalue+=showfield.options[i].value;}field.value=hiddenvalue;}function doOutline(e){var targetId, targetElement;if (!e){var e = window.event;srcElement = e.srcElement;}else{srcElement = e.target;while(srcElement.nodeType != srcElement.ELEMENT_NODE)srcElement = srcElement.parentNode;}if (srcElement.className == "Outline"){targetId = srcElement.id + "d";targetElement = document.getElementById(targetId);if (targetElement.style.display == "none"){targetElement.style.display = "";srcElement.src = upimg.src;srcElement.title = "Hide Group";}else{targetElement.style.display = "none";srcElement.src = downimg.src;srcElement.title = "Show Group";}}}document.onclick = doOutline;function checkDuplicate(thisvalue) {for(var i=0;i < container2.options.length;i++) {if(container2.options[i].value==thisvalue) { return true; } } return false; }var downimg = new Image();downimg.src="../images/scrolldown.png";var upimg = new Image();upimg.src="../images/scrollup.png";function nCodeHelp(){var url = "../servlet/controlservlet?command=getHelp&type=process&id=__epma_help_system";window.location = url;return false;}function nCodeHelpInWindow(){var isIE = navigator.appName.indexOf('Microsoft')!=-1;var url = "controlservlet?command=getHelp&backid=destroy&type=process&id=__epma_help_system";if(isIE){modelessDialogShowIE(url)}else{modelessDialogShowMoz(url)};return false;}function modelessDialogShowIE(url){window.open(url,null,"resizable=1,scrollbars=0,width=700px,height=500px");}function modelessDialogShowMoz(url){window.open(url, '', 'scrollbars=0,resizable=yes,dependent=yes,width=600px,height=300px');}try{top.statusframe.progressStatus(false);}catch(everything){}try{top.statusframe.setLockIcon(false);}catch(everything){}
+</script>
+<script language="JavaScript" src="../js/ncrenderer.js"></script>
+<link rel="stylesheet" href="../style/styles-ie.css" type="text/css">
+<form class="formmargin" id="form" name="form" onsubmit="try{return checkName();}catch(everything){return true;}"
+      enctype="multipart/form-data" method="post"
+      action="controlservlet?command=process&amp;process=__epma_help_system&amp;step=0" accept-charset="UTF-8">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+            <td colspan="4" valign="top" class="maintbar"><img src="../images/spacer.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+            <td width="1" class="maintbar"><img src="../images/spacer.gif" width="1" height="26" align="middle"></td>
+            <td class="maintbar" valign="middle" colspan="1" nowrap=""><span class="maintbartxt"><b>Help Page</b>&nbsp;</span><img
+                    src="../images/spacer.gif" width="50" height="1" align="absmiddle"></td>
+            <td class="exptitlebarbg" align="right" nowrap=""><img onclick="return nCodeHelpInWindow();"
+                                                                   style="cursor:pointer;cursor:hand;"
+                                                                   src="../images/help.png" width="16" height="16"
+                                                                   align="absmiddle" alt="Help" title="Help"><img
+                    onclick="javascript:top.main.location.href='../pages/main/homepage.jsp';"
+                    style="cursor:pointer;cursor:hand;" src="../images/close.png" width="16" height="16"
+                    align="absmiddle" alt="Close" title="Close">&nbsp;&nbsp;
+            </td>
+        </tr>
+        <!--<tr><td colspan="3" valign="top" class="maintbar"><img src="../images/spacer.gif" width="1" height="1"></td></tr>-->
+        <tr>
+            <td colspan="4" height="1" bgcolor="#999999"><img src="../images/spacer.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+            <td colspan="3" height="1" bgcolor="#ffffff"><img src="../images/spacer.gif" width="1" height="1"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="atttable" cellspacing="0" cellpadding="0" align="center" width="98%">
+        <tbody>
+        <tr>
+            <td class="applybg" colspan="0"><img src="../images/spacer.gif" height="3"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table align="center" cellspacing="0" cellpadding="10" border="0" width="90%">
+        <tbody>
+        <tr>
+            <td class="formtext"><br><br>
+                <table border="0" cellpadding="5" cellspacing="1" bgcolor="#666666" width="100%">
+                    <tbody>
+                    <tr>
+                        <td class="formtextlge" bgcolor="#eeeeee" align="center"><b>System help</b></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                This is general help. For help on specific functions within the powder metal database click the context
+                sensitive help icon in the frame header of the function <img src="/static/images/help/help_on_function">.
+                <h3>Navigation</h3>
+                Many of the search capabilities are provided as 'wizards' in which a series of screens lead you to the
+                result. If you need to navigate back from a screen and in the absense of navigation in the browser
+                display area, you can use the browser's 'back' button.<br><img src="/static/images/help/ie6_backbutton">
 
+
+                <h3><img src="/static/images/help/epma_password_change">Update Account Details</h3>
+                This option allows you to change your name, company, address, e-mail, telephone number, subscription to
+                the mailing list and password. You must select the 'Change Password' checkbox in order to enter a new
+                password. The system will then change your details.
+
+                <h3><img src="/static/images/help/unitscalculator">Units calculator</h3>
+                The units calculator enables you to easily convert values between a wide range of scientific and
+                engineering units.
+
+                <h3><img src="/static/images/help/print">Print Page</h3>
+                Prints the currently displayed page.
+
+                <h3><img src="/static/images/help/epma_cart_view">View Data Cart</h3>
+                The data cart can be used to save the results of one or more searches. It uses the common 'shopping
+                cart' analogy to save the results which were added to the cart. The View Data Cart option displays the
+                current
+                list of saved grades. Detailed information for each grade saved on the cart can be accessed by clicking
+                the
+                hyperlink of the grade name.
+
+                <h3><img src="/static/images/help/epma_cart_empty">Empty Data Cart</h3>
+                Clears the data cart of any grades previously saved.
+
+                <h3><img src="/static/images/help/epma_help">More Information</h3>
+                When you see this button there is more detailed technical background available.
+
+                <h3>Output formats</h3>
+                <h4>CSV files</h4>
+                Comma separated values - some search results can be exported or saved as CSV files. This is a text based
+                format that canbe imported by popular database and spreadsheet software such as MS Excel.
+
+                <h4>PDF files</h4>
+                Some advanced searches can be saved as Adobe Acrobat PDF files instead of being displayed on screen. You
+                will need the free Acrobat Reader to view the results. (see <a
+                        href="http://www.adobe.com/products/acrobat/readstep2.html"
+                        target="_blank&quot;">www.adobe.com</a>)
+                <h4>FEA files</h4>
+                Some search results can be exported as FE file which are FE files that can be in either NASTRAN, ABAQUS
+                or ANSYS format.
+
+                <h3><img src="/static/images/help/showhide_outlookbar">Show\Close shortcuts</h3>
+                The Powder Metal Database has MS Outlook style menu bars that you can click to reveal icons that will
+                run its processes (note that Outlook style menus are only one level deep).
+                You can hide the menu bars with the <em>Close shortcuts</em> button. This will make the browser display
+                area full screen.
+
+
+                <br><br></td>
+        </tr>
+        </tbody>
+    </table>
+    <script>var container="";var container2="";var objrefbutton = new Image();</script>
+    <script></script>
+    <script language="javascript">
+        function checkName(){try{if(document.form.objname.value == ""){ alert("Please enter a name for this object");return false;}}catch(everything){return true;}}
+    </script>
+    <script language="javascript"></script>
+</form>
 </body>
 </html>
+{% endblock %}
