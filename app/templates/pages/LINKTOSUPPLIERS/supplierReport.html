@@ -1,116 +1,108 @@
 {% extends "base_menu.html" %}
 {% block content %}
 
-        <!-- partial -->
-        <div class="main-panel">
-            <div class="content-wrapper">
-                <div class="row">
-                    <div class="col-md-12 grid-margin">
-                        <div class="d-flex justify-content-between flex-wrap">
-                            <div class="d-flex align-items-end flex-wrap">
-                                <div class="mr-md-3 mr-xl-5">
+<!-- partial -->
 
+<div class="col-xs-6 col-sm-6">
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">选择地区</strong>
+        </div>
+        <div class="card-body">
 
-                                    <div class="col-xs-6 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">选择地区</strong>
-                                            </div>
-                                            <div class="card-body">
+            <select data-placeholder="Choose a Country..." class="standardSelect"
+                    tabindex="1">
 
-                                                <select data-placeholder="Choose a Country..." class="standardSelect"
-                                                        tabindex="1">
+                <option value="North America">北美</option>
+                <option value="Europe">欧洲</option>
+                <option value="Asia">亚洲</option>
+            </select>
 
-                                                    <option value="United States">北美</option>
-                                                    <option value="United Kingdom">欧洲</option>
-                                                    <option value="United Kingdom">亚洲</option>
-                                                </select>
+            <button type="提交" class="btn btn-success btn-sm">
+                <i class="fa fa-dot-circle-o"></i> 提交
+            </button>
+            <button type="重置" class="btn btn-success btn-sm">
+                <i class="fa fa-ban"></i> 重置
+            </button>
+        </div>
+    </div>
 
-                                                <button type="提交" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-dot-circle-o"></i> 提交
-                                                </button>
-                                                <button type="重置" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-ban"></i> 重置
-                                                </button>
-                                            </div>
-                                        </div>
+</div>
+<div class="col-xs-6 col-sm-6">
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">材料类别</strong>
+        </div>
+        <div class="card-body">
 
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">材料类别</strong>
-                                            </div>
-                                            <div class="card-body">
+            <select data-placeholder="Choose a Country..." class="standardSelect"
+                    tabindex="1">
 
-                                                <select data-placeholder="Choose a Country..." class="standardSelect"
-                                                        tabindex="1">
+                <option value="United States">--全部都选--</option>
+                <option value="United States">北美</option>
+                <option value="United Kingdom">欧洲</option>
+                <option value="United Kingdom">亚洲</option>
+            </select>
 
-                                                    <option value="United States">--全部都选--</option>
-                                                    <option value="United States">北美</option>
-                                                    <option value="United Kingdom">欧洲</option>
-                                                    <option value="United Kingdom">亚洲</option>
-                                                </select>
+            <button type="提交" class="btn btn-success btn-sm">
+                <i class="fa fa-dot-circle-o"></i> 提交
+            </button>
+            <button type="重置" class="btn btn-success btn-sm">
+                <i class="fa fa-ban"></i> 重置
+            </button>
+        </div>
+    </div>
+</div>
+<div class="col-xs-6 col-sm-6">
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">供应商国家</strong>
+        </div>
+        <div class="card-body">
 
-                                                <button type="提交" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-dot-circle-o"></i> 提交
-                                                </button>
-                                                <button type="重置" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-ban"></i> 重置
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">供应商国家</strong>
-                                            </div>
-                                            <div class="card-body">
+            <select data-placeholder="Choose a Country..." class="standardSelect"
+                    tabindex="1">
 
-                                                <select data-placeholder="Choose a Country..." class="standardSelect"
-                                                        tabindex="1">
+                <option value="United States">--全部都选--</option>
+                <option value="United States">北美</option>
+                <option value="United Kingdom">欧洲</option>
+                <option value="United Kingdom">亚洲</option>
+            </select>
 
-                                                    <option value="United States">--全部都选--</option>
-                                                    <option value="United States">北美</option>
-                                                    <option value="United Kingdom">欧洲</option>
-                                                    <option value="United Kingdom">亚洲</option>
-                                                </select>
+            <button type="提交" class="btn btn-success btn-sm">
+                <i class="fa fa-dot-circle-o"></i> 提交
+            </button>
+            <button type="重置" class="btn btn-success btn-sm">
+                <i class="fa fa-ban"></i> 重置
+            </button>
+        </div>
+    </div>
+</div>
 
-                                                <button type="提交" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-dot-circle-o"></i> 提交
-                                                </button>
-                                                <button type="重置" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-ban"></i> 重置
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+<div class="col-xs-6 col-sm-6">
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">供应商类型</strong>
+        </div>
+        <div class="card-body">
 
-                                    <div class="col-xs-6 col-sm-6">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <strong class="card-title">供应商类型</strong>
-                                            </div>
-                                            <div class="card-body">
+            <select data-placeholder="Choose a Country..." class="standardSelect"
+                    tabindex="1">
 
-                                                <select data-placeholder="Choose a Country..." class="standardSelect"
-                                                        tabindex="1">
+                <option value="United States">--全部都选--</option>
+                <option value="United States">北美</option>
+                <option value="United Kingdom">欧洲</option>
+                <option value="United Kingdom">亚洲</option>
+            </select>
 
-                                                    <option value="United States">--全部都选--</option>
-                                                    <option value="United States">北美</option>
-                                                    <option value="United Kingdom">欧洲</option>
-                                                    <option value="United Kingdom">亚洲</option>
-                                                </select>
-
-                                                <button type="提交" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-dot-circle-o"></i> 提交
-                                                </button>
-                                                <button type="重置" class="btn btn-success btn-sm">
-                                                    <i class="fa fa-ban"></i> 重置
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+            <button type="提交" class="btn btn-success btn-sm">
+                <i class="fa fa-dot-circle-o"></i> 提交
+            </button>
+            <button type="重置" class="btn btn-success btn-sm">
+                <i class="fa fa-ban"></i> 重置
+            </button>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
