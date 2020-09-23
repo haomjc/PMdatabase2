@@ -18,6 +18,7 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="./static/images/favicon.png" />
 </head>
+<body>
 <div>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -140,8 +141,6 @@
           </li>
           <li class="nav-item nav-profile dropdown">
 
-
-
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="./static/images/faces/face5.jpg" alt="profile"/>
 
@@ -161,7 +160,6 @@
 
         {% block body %}{% endblock %}
 
-
             </div>
           </li>
         </ul>
@@ -176,19 +174,6 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
 
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">-->
-<!--              <i class="mdi mdi-account menu-icon"></i>-->
-<!--              <span class="menu-title">用户登录页</span>-->
-<!--              <i class="menu-arrow"></i>-->
-<!--            </a>-->
-<!--            <div class="collapse" id="auth">-->
-<!--              <ul class="nav flex-column sub-menu">-->
-<!--                <li class="nav-item"> <a class="nav-link" href="{{url_for('login')}}"> 登录 </a></li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </li>-->
-
           <li class="nav-item">
             <a class="nav-link" href="{{url_for('index')}}">
               <i class="mdi mdi-home menu-icon"></i>
@@ -196,12 +181,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#SEARCH BY PROPERTIES" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#SEARCHBYPROPERTIES" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
               <span class="menu-title">根据材料属性搜索</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="SEARCH BY PROPERTIES">
+            <div class="collapse" id="SEARCHBYPROPERTIES">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('SearchonMechanicalProperties')}}">根据机械性能搜索</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('SearchonPhysicalandMagneticProperties')}}">根据物理及磁性属性搜索</a></li>
@@ -210,13 +195,13 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#SEARCH BY GRADE">
+            <a class="nav-link" data-toggle="collapse" href="#SEARCHBYGRADE" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-view-headline menu-icon"></i>
               <span class="menu-title">根据等级搜索</span>
               <i class="menu-arrow"></i>
             </a>
 
-            <div class="collapse" id="SEARCH BY GRADE">
+            <div class="collapse" id="SEARCHBYGRADE">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('SearchByGrade')}}">Search by grade</a></li>
               </ul>
@@ -224,15 +209,15 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#ADVANCED SEARCH">
+            <a class="nav-link" data-toggle="collapse" href="#ADVANCEDSEARCH" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">高级搜索</span>
               <i class="menu-arrow"></i>
             </a>
 
-            <div class="collapse" id="ADVANCED SEARCH">
+            <div class="collapse" id="ADVANCEDSEARCH">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('PropertySearch')}}"></a>Property Search</li>
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('PropertySearch')}}">Property Search</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('ShowSavedSearch')}}">Show Saved Search</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('ClearsTheSavedSearch')}}">Clears The Saved Search</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('ViewLastSearchResults')}}">View Last Search Results</a></li>
@@ -260,7 +245,7 @@
 
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#supplierReport" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-grid-large menu-icon"></i>
+              <i class="mdi mdi-emoticon menu-icon"></i>
               <span class="menu-title">链接到供应商</span>
               <i class="menu-arrow"></i>
             </a>
@@ -290,7 +275,7 @@
         </ul>
       </nav>
       <!-- partial -->
-
+<div>
 {% block content %} {% endblock %}
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
