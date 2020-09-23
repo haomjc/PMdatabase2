@@ -198,9 +198,19 @@ def manufacturingconditions():
     return render_template("pages/PMinformation/manufacturingconditions.html")
 
 
-@app.route("/searchbymechanicalproperties")
-def searchbymechanicalproperties():
-    return render_template("pages/searchbyproperties/searchbymechanicalproperties.html")
+@app.route("/Search on Mechanical Properties")
+def SearchonMechanicalProperties():
+    return render_template("pages/searchbyproperties/SearchonMechanicalProperties.html")
+
+
+@app.route("/Search on Physical and Magnetic Properties")
+def SearchonPhysicalandMagneticProperties():
+    return render_template("pages/searchbyproperties/SearchonPhysicalandMagneticProperties.html")
+
+
+@app.route("/Search on Fatigue Properties")
+def SearchonFatigueProperties():
+    return render_template("pages/searchbyproperties/SearchonFatigueProperties.html")
 
 
 @app.route("/help_on_plotting")

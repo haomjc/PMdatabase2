@@ -203,25 +203,43 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url_for('searchbymechanicalproperties')}}">根据机械性能搜索</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">根据物理及磁性属性搜索</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">根据疲劳特性搜索</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('Search on Mechanical Properties')}}">根据机械性能搜索</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('Search on Physical and Magnetic Properties')}}">根据物理及磁性属性搜索</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('Search on Fatigue Properties')}}">根据疲劳特性搜索</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="#SEARCH BY GRADE">
               <i class="mdi mdi-view-headline menu-icon"></i>
               <span class="menu-title">根据等级搜索</span>
               <i class="menu-arrow"></i>
             </a>
+
+            <div class="collapse" id="SEARCH BY GRADE">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('SearchByGrade')}}"></a>Property Search</li>
+              </ul>
           </li>
+
+
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="#ADVANCED SEARCH">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">高级搜索</span>
               <i class="menu-arrow"></i>
             </a>
+
+            <div class="collapse" id="ADVANCED SEARCH">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('PropertySearch')}}"></a>Property Search</li>
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('ShowSavedSearch')}}">Show Saved Search</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('ClearsTheSavedSearch')}}">Clears The Saved Search</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url_for('ViewLastSearchResults')}}">View Last Search Results</a></li>
+
+              </ul>
+            </div>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#FATIGUEDATA" aria-expanded="false" aria-controls="ui-basic">
@@ -234,9 +252,6 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('SNFatigueData')}}">SN疲劳数据</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url_for('StrainLifeData')}}">应变寿命数据</a></li>
-<!--                <li class="nav-item"> <a class="nav-link" href="show_add_user.html">show_add_user</a></li>-->
-                
-
               </ul>
             </div>
 
