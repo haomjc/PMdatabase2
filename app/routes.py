@@ -198,19 +198,44 @@ def manufacturingconditions():
     return render_template("pages/PMinformation/manufacturingconditions.html")
 
 
-@app.route("/Search on Mechanical Properties")
+@app.route("/SearchonMechanicalProperties")
 def SearchonMechanicalProperties():
     return render_template("pages/searchbyproperties/SearchonMechanicalProperties.html")
 
 
-@app.route("/Search on Physical and Magnetic Properties")
+@app.route("/SearchonPhysicalandMagneticProperties")
 def SearchonPhysicalandMagneticProperties():
     return render_template("pages/searchbyproperties/SearchonPhysicalandMagneticProperties.html")
 
 
-@app.route("/Search on Fatigue Properties")
+@app.route("/SearchonFatigueProperties")
 def SearchonFatigueProperties():
     return render_template("pages/searchbyproperties/SearchonFatigueProperties.html")
+
+
+@app.route("/SearchByGrade")
+def SearchByGrade():
+    return render_template("pages/SEARCH BY GRADE/SearchByGrade.html")
+
+
+@app.route("/PropertySearch")
+def PropertySearch():
+    return render_template("pages/ADVANCED SEARCH/PropertySearch.html")
+
+
+@app.route("/ShowSavedSearch")
+def ShowSavedSearch():
+    return render_template("pages/ADVANCED SEARCH/ShowSavedSearch.html")
+
+
+@app.route("/ClearsTheSavedSearch")
+def ClearsTheSavedSearch():
+    return render_template("pages/ADVANCED SEARCH/ClearsTheSavedSearch.html")
+
+
+@app.route("/ViewLastSearchResults")
+def ViewLastSearchResults():
+    return render_template("pages/ADVANCED SEARCH/ViewLastSearchResults.html")
 
 
 @app.route("/help_on_plotting")
