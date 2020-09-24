@@ -173,9 +173,14 @@ def StrainLifeData():
     return render_template("pages/FATIGUEDATA/Strain Life Data.html")
 
 
-@app.route("/supplierReport")
+@app.route("/supplierReport", methods=['GET', 'POST'])
 def supplierReport():
     return render_template("pages/LINKTOSUPPLIERS/supplierReport.html")
+
+
+@app.route("/SUPPLIERLIST", methods=['GET', 'POST'])
+def SUPPLIERLIST():
+    return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html")
 
 
 @app.route("/aboutmetalinjectionmoulding")

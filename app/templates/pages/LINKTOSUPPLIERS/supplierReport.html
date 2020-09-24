@@ -2,15 +2,14 @@
 {% block content %}
 
 <!-- partial -->
+<form id="supplierReport" action="{{url_for("SUPPLIERLIST")}}" method="post">
 
-<div class="col-xs-6 col-sm-6">
-    <div class="card">
         <div class="card-header">
             <strong class="card-title">选择地区</strong>
         </div>
         <div class="card-body">
 
-            <select data-placeholder="Choose a Country..." class="standardSelect"
+            <select data-placeholder="Choose a Region..." class="standardSelect"
                     tabindex="1">
 
                 <option value="North America">北美</option>
@@ -18,91 +17,44 @@
                 <option value="Asia">亚洲</option>
             </select>
 
-            <button type="提交" class="btn btn-success btn-sm">
-                <i class="fa fa-dot-circle-o"></i> 提交
-            </button>
-            <button type="重置" class="btn btn-success btn-sm">
-                <i class="fa fa-ban"></i> 重置
-            </button>
+<!--            <button type="submit" class="btn btn-success btn-sm" value="Submit">-->
+<!--                <i class="fa fa-dot-circle-o"></i> 提交-->
+<!--            </button>-->
+<!--            <button type="reset" class="btn btn-success btn-sm" value="Reset">-->
+<!--                <i class="fa fa-ban"></i> 重置-->
+<!--            </button>-->
         </div>
-    </div>
 
-</div>
-<div class="col-xs-6 col-sm-6">
-    <div class="card">
         <div class="card-header">
             <strong class="card-title">材料类别</strong>
         </div>
         <div class="card-body">
 
-            <select data-placeholder="Choose a Country..." class="standardSelect"
+            <select data-placeholder="Choose a Material..." class="standardSelect"
                     tabindex="1">
 
-                <option value="United States">--全部都选--</option>
-                <option value="United States">北美</option>
-                <option value="United Kingdom">欧洲</option>
-                <option value="United Kingdom">亚洲</option>
-            </select>
+                <option value="All">--全部都选--</option>
+                <option value="Structural Ferrous">Structural Ferrous</option>
+                <option value="stainless Steels">stainless Steels</option>
+                <option value="Powder Forged Steels">Powder Forged Steels</option>
+                <option value="Structural Non-Ferrous Copper Base">Structural Non-Ferrous Copper Base</option>
+                <option value="Structural Non-Ferrous Aluminium Base">Structural Non-Ferrous Aluminium Base</option>
+                <option value="Bearing Alloys">Bearing Alloys</option>
+                <option value="Metal Injection Moulding">Metal Injection Moulding</option>
 
-            <button type="提交" class="btn btn-success btn-sm">
+            </select>
+            <br />
+            <br />
+
+<p>
+            <button type="submit" class="btn btn-success btn-sm" value="Submit">
                 <i class="fa fa-dot-circle-o"></i> 提交
             </button>
-            <button type="重置" class="btn btn-success btn-sm">
+            <button type="reset" class="btn btn-success btn-sm" value="Reset">
                 <i class="fa fa-ban"></i> 重置
             </button>
+</p>
         </div>
-    </div>
-</div>
-<div class="col-xs-6 col-sm-6">
-    <div class="card">
-        <div class="card-header">
-            <strong class="card-title">供应商国家</strong>
-        </div>
-        <div class="card-body">
 
-            <select data-placeholder="Choose a Country..." class="standardSelect"
-                    tabindex="1">
-
-                <option value="United States">--全部都选--</option>
-                <option value="United States">北美</option>
-                <option value="United Kingdom">欧洲</option>
-                <option value="United Kingdom">亚洲</option>
-            </select>
-
-            <button type="提交" class="btn btn-success btn-sm">
-                <i class="fa fa-dot-circle-o"></i> 提交
-            </button>
-            <button type="重置" class="btn btn-success btn-sm">
-                <i class="fa fa-ban"></i> 重置
-            </button>
-        </div>
-    </div>
-</div>
-
-<div class="col-xs-6 col-sm-6">
-    <div class="card">
-        <div class="card-header">
-            <strong class="card-title">供应商类型</strong>
-        </div>
-        <div class="card-body">
-
-            <select data-placeholder="Choose a Country..." class="standardSelect"
-                    tabindex="1">
-
-                <option value="United States">--全部都选--</option>
-                <option value="United States">北美</option>
-                <option value="United Kingdom">欧洲</option>
-                <option value="United Kingdom">亚洲</option>
-            </select>
-
-            <button type="提交" class="btn btn-success btn-sm">
-                <i class="fa fa-dot-circle-o"></i> 提交
-            </button>
-            <button type="重置" class="btn btn-success btn-sm">
-                <i class="fa fa-ban"></i> 重置
-            </button>
-        </div>
-    </div>
-</div>
-
+</form>
 {% endblock %}
