@@ -182,9 +182,11 @@ def supplierReport():
 def SUPPLIERLIST():
     Region = request.form.get('Region')
     Material = request.form.get('Material')
+    if Material == 'All':
+        sql = "select * from suppliers where Region=" + "'" + str(Region) + "'"
+    else:
+        sql = "select * from suppliers where Region="+"'"+str(Region)+"'"+" and "+str(Material)+"='*'"
 
-    sql = "select * from suppliers where Region="+"'"+str(Region)+"'"+" and "+str(Material)+"='*'"
-    print(sql)
     datas_pmsuppliers = db_manage.query_data_pmsuppliers(sql)
 
     return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html", datas_pmsuppliers=datas_pmsuppliers)
@@ -215,14 +217,36 @@ def SearchonMechanicalProperties():
     return render_template("pages/searchbyproperties/SearchonMechanicalProperties.html")
 
 
+@app.route("/MechanicalProperties", methods=['GET', 'POST'])
+def MechanicalProperties():
+    manufacturingtechnology = request.form.get('manufacturing technology')
+    materialtype = request.form.get('material type')
+    UltimateTensileStrengthRange = request.form.get('Ultimate Tensile Strength Range')
+    YieldStressRange = request.form.get('Yield Stress Range')
+    YoungsModulusERange = request.form.get('Youngs Modulus E Range')
+    HardnessRangeVickers = request.form.get('Hardness Range [Vickers]')
+
+    return render_template("pages/searchbyproperties/MechanicalProperties.html")
+
+
 @app.route("/SearchonPhysicalandMagneticProperties")
 def SearchonPhysicalandMagneticProperties():
     return render_template("pages/searchbyproperties/SearchonPhysicalandMagneticProperties.html")
 
 
+@app.route("/PhysicalandMagneticProperties", methods=['GET', 'POST'])
+def PhysicalandMagneticProperties():
+    return render_template("pages/searchbyproperties/PhysicalandMagneticProperties.html")
+
+
 @app.route("/SearchonFatigueProperties")
 def SearchonFatigueProperties():
     return render_template("pages/searchbyproperties/SearchonFatigueProperties.html")
+
+
+@app.route("/FatigueProperties", methods=['GET', 'POST'])
+def FatigueProperties():
+    return render_template("pages/searchbyproperties/FatigueProperties.html")
 
 
 @app.route("/SearchByGrade")
@@ -273,3 +297,5 @@ def view_data_cart():
 @app.route("/empty_data_cart")
 def empty_data_cart():
     return render_template("pages/data/empty_data_cart.html")
+
+

@@ -1,10 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base_menu.html" %}
+{% block content %}
 
-</body>
-</html>
+<form id="SearchonMechanicalProperties" action="{{url_for("PhysicalandMagneticProperties")}}" method="post" >
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">选择制造方式</strong>
+        </div>
+        <div class="card-body">
+
+            <select name="manufacturing technology" data-placeholder="Select manufacturing technology..." class="standardSelect"
+                    tabindex="1">
+                <option value="All">--全部都选--</option>
+                <option value="Conventional PM">传统PM(粉末冶金)</option>
+                <option value="MIM">MIM(金属注射成型)</option>
+
+            </select>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">选择材料类型</strong>
+        </div>
+        <div class="card-body">
+
+            <select name="material type" data-placeholder="Select material type ... " class="standardSelect"
+                    tabindex="1">
+                <option value="All">--全部都选--</option>
+                <option value="Ferrous structural">Ferrous structural</option>
+                <option value="Non-ferrous structural">Non-ferrous structural</option>
+                <option value="Bearing">Bearing</option>
+                <option value="Stainless Steel">Stainless Steel</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">Specify Physical Property Ranges</strong>
+        </div>
+        <div class="card-body">
+        <td class="repcell">CTE (RT-200C) Range</td>
+            <select name="Ultimate Tensile Strength Range" data-placeholder="Specify Mechanical Property Ranges" class="standardSelect"
+                    tabindex="1">
+                <option value="00">--任意--</option>
+                <option value="01">< 8 x10^-6/DegC</option>
+                <option value="02">8-11 x10^-6/DegC</option>
+                <option value="03">11-14 x10^-6/DegC</option>
+                <option value="04">14-16 x10^-6/DegC</option>
+                <option value="05">> 16 x10^-6/DegC</option>
+            </select>
+            <br />
+            <br />
+        <td class="repcell">Thermal Conductivity (RT) Range</td>
+            <select name="Thermal Conductivity (RT) Range" data-placeholder="Specify Mechanical Property Ranges" class="standardSelect"
+                    tabindex="1">
+                <option value="00">--任意--</option>
+                <option value="01">< 20 w/M-DegC</option>
+                <option value="02">20-40 w/M-DegC</option>
+                <option value="03">40-60 w/M-DegC</option>
+                <option value="04">60-80 w/M-DegC</option>
+                <option value="05">> 80 w/M-DegC</option>
+            </select>
+            <br />
+            <br />
+        <td class="repcell">Maximum Induction at 800-1200 A/m (10-15 Oe) Range</td>
+            <select name="Maximum Induction at 800-1200 A/m (10-15 Oe) Range" data-placeholder="Specify Mechanical Property Ranges" class="standardSelect"
+                    tabindex="1">
+                <option value="00">--任意--</option>
+                <option value="01">< 8 x10^-1 T</option>
+                <option value="02">8-10 x10^-1 T</option>
+                <option value="03">10-12 x10^-1 T</option>
+                <option value="04">12-14 x10^-1 T</option>
+                <option value="05">> 14 x10^-1 T</option>
+            </select>
+            <br />
+            <br />
+        <td class="repcell" >Maximum Permeability Range</td>
+
+            <select name="Maximum Permeability Range" data-placeholder="Specify Mechanical Property Ranges" class="standardSelect"
+                    tabindex="1" >
+                <option value="00">--任意--</option>
+                <option value="01">< 2000 </option>
+                <option value="02">2000-3000 </option>
+                <option value="03">3000-4000 </option>
+                <option value="04">4000-5000 </option>
+                <option value="05">> 5000 </option>
+            </select>
+
+            <br />
+            <br />
+
+            <button type="submit" class="btn btn-success btn-sm" value="Submit">
+                <i class="fa fa-dot-circle-o"></i> 提交
+            </button>
+            <button type="reset" class="btn btn-success btn-sm" value="Reset">
+                <i class="fa fa-ban"></i> 重置
+            </button>
+        </div>
+    </div>
+
+</form>
+{% endblock %}
