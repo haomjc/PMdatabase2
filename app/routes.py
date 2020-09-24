@@ -180,7 +180,9 @@ def supplierReport():
 
 @app.route("/SUPPLIERLIST", methods=['GET', 'POST'])
 def SUPPLIERLIST():
-    return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html")
+    Region = request.form.get('Region')
+    Material = request.form.get('Material')
+    return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html", Region=Region, Material=Material)
 
 
 @app.route("/aboutmetalinjectionmoulding")
