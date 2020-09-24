@@ -182,7 +182,12 @@ def supplierReport():
 def SUPPLIERLIST():
     Region = request.form.get('Region')
     Material = request.form.get('Material')
-    return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html", Region=Region, Material=Material)
+
+    sql = "select * from suppliers where Region="+"'"+str(Region)+"'"+" and "+str(Material)+"='*'"
+    print(sql)
+    datas_pmsuppliers = db_manage.query_data_pmsuppliers(sql)
+
+    return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html", datas_pmsuppliers=datas_pmsuppliers)
 
 
 @app.route("/aboutmetalinjectionmoulding")

@@ -1,11 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>{{Region}}</h1>
-<h1>{{Material}}</h1>
-</body>
-</html>
+{% extends "base_menu.html" %}
+{% block content %}
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-12 stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">SUPPLIER LIST</p>
+
+                    <div class="table-responsive">
+
+                        <div style="overflow: auto; width: 50%;">
+                            <table id="recent-purchases-listing" class="table">
+                                <thead>
+                                <tr>
+                                    <th>Supplier Name</th>
+                                    <th>State</th>
+                                    <th>Country</th>
+                                    <th>Contact</th>
+                                    <th>Phone number</th>
+                                    <th>E-mail</th>
+                                    <th>Web site</th>
+                                    <th>Ferrous Structural</th>
+                                    <th>Stainless</th>
+                                    <th>Powder Forged</th>
+                                    <th>Non-Ferrous Structural (Al)</th>
+                                    <th>Non-Ferrous Structural (Cu)</th>
+                                    <th>Bearing</th>
+                                    <th>Metal Injection Moulding</th>
+                                    <th>MIM Ferrous</th>
+                                    <th>MIM Stainless Steel</th>
+                                    <th>MIM Nonferrous</th>
+                                    <th>Region</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for datas in datas_pmsuppliers %}
+                                <tr>
+                                    {% for data in datas.values() %}
+                                    <td>{{data}}</td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
