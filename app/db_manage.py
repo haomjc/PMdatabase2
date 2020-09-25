@@ -11,28 +11,8 @@ def get_conn():
     )
 
 
-def get_conn_pmsuppliers():
-    return pymysql.connect(
-        host='127.0.0.1',
-        user='root',
-        password='700824',
-        database='pmsuppliers',
-        charset='utf8'
-    )
-
-
 def query_data(sql):
     conn = get_conn()
-    try:
-        cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute(sql)
-        return cursor.fetchall()
-    finally:
-        conn.close()
-
-
-def query_data_pmsuppliers(sql):
-    conn = get_conn_pmsuppliers()
     try:
         cursor = conn.cursor(pymysql.cursors.DictCursor)
         cursor.execute(sql)

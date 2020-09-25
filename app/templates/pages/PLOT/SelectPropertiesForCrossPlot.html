@@ -1,0 +1,80 @@
+{% extends "base_menu.html" %}
+{% block content %}
+
+<form id="SelectPropertiesForCrossPlot" action="{{url_for("ShowCrossPlot")}}" method="post">
+
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Select X and Y properties ...</strong>
+    </div>
+    <div class="card-body">
+        <td class="repcell">X Property</td>
+        <select name="X Property" data-placeholder="X Property" class="standardSelect"
+                tabindex="1">
+                <option value="0000">Select...</option>
+                <option value="Mech_Charpy">Charpy Impact Energy</option>
+                <option value="Mech_Comp_Yield">Compressive Yield Stress</option>
+                <option value="Mech_Density">Density</option>
+                <option value="Mech_Elongation">Elongation</option>
+                <option value="Mech_Fracture_Toughness">Fracture Toughness</option>
+                <option value="Mech_Hard_Brinell">Hardness (Brinell)</option>
+                <option value="Mech_Hard_HRA">Hardness (HRA)</option>
+                <option value="Mech_Hard_HRB">Hardness (HRB)</option>
+                <option value="Mech_Hard_HRC">Hardness (HRC)</option>
+                <option value="Mech_Hard_HRF">Hardness (HRF)</option>
+                <option value="Mech_Hard_HRH">Hardness (HRH)</option>
+                <option value="Mech_Hard_Vickers">Hardness (Vickers)</option>
+                <option value="Mech_Micro_Hardness">Micro Hardness (Vickers)</option>
+                <option value="Bearing_PV">PV (Bearings)</option>
+                <option value="Mech_Poisson">Poisson's Ratio</option>
+                <option value="Mech_Radial_Crushing_Strength">Radial Crushing Strength</option>
+                <option value="Mech_Reduction in Area">Reduction in Area</option>
+                <option value="Mech_Strength_Constant">Strength Constant</option>
+                <option value="Mech_Transverse_Rupture_Strength">Transverse Rupture Strength</option>
+                <option value="Mech_UTS">UTS</option>
+                <option value="Mech_Yield">Yield stress</option>
+                <option value="Mech_Youngs">Young's Modulus</option>
+        </select>
+        <br/>
+        <br/>
+        <td class="repcell">Y Property</td>
+        <select name="Y Property" data-placeholder="Y Property" class="standardSelect"
+                tabindex="1">
+                <option value="0000">Select...</option>
+                <option value="Mech_Charpy">Charpy Impact Energy</option>
+                <option value="Mech_Comp_Yield">Compressive Yield Stress</option>
+                <option value="Mech_Density">Density</option>
+                <option value="Mech_Elongation">Elongation</option>
+                <option value="Mech_Fracture_Toughness">Fracture Toughness</option>
+                <option value="Mech_Hard_Brinell">Hardness (Brinell)</option>
+                <option value="Mech_Hard_HRA">Hardness (HRA)</option>
+                <option value="Mech_Hard_HRB">Hardness (HRB)</option>
+                <option value="Mech_Hard_HRC">Hardness (HRC)</option>
+                <option value="Mech_Hard_HRF">Hardness (HRF)</option>
+                <option value="Mech_Hard_HRH">Hardness (HRH)</option>
+                <option value="Mech_Hard_Vickers">Hardness (Vickers)</option>
+                <option value="Mech_Micro_Hardness">Micro Hardness (Vickers)</option>
+                <option value="Bearing_PV">PV (Bearings)</option>
+                <option value="Mech_Poisson">Poisson's Ratio</option>
+                <option value="Mech_Radial_Crushing_Strength">Radial Crushing Strength</option>
+                <option value="Mech_Reduction in Area">Reduction in Area</option>
+                <option value="Mech_Strength_Constant">Strength Constant</option>
+                <option value="Mech_Transverse_Rupture_Strength">Transverse Rupture Strength</option>
+                <option value="Mech_UTS">UTS</option>
+                <option value="Mech_Yield">Yield stress</option>
+                <option value="Mech_Youngs">Young's Modulus</option>
+        </select>
+        <br/>
+        <br/>
+
+        <button type="submit" class="btn btn-success btn-sm" value="Submit">
+            <i class="fa fa-dot-circle-o"></i> 提交
+        </button>
+        <button type="reset" class="btn btn-success btn-sm" value="Reset">
+            <i class="fa fa-ban"></i> 重置
+        </button>
+    </div>
+</div>
+
+</form>
+{% endblock %}

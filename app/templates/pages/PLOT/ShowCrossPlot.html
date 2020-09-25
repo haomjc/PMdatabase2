@@ -1,0 +1,65 @@
+{% extends "base_menu.html" %}
+{% block content %}
+
+
+<form id="datatable" class="atttable" action="{{url_for("ShowCrossPlot")}}" method="post">
+
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Plot limits</strong>
+    </div>
+    <div class="card-body">
+
+    <tr>
+        <td class="repcell">Minimum X value</td>
+        <td class="repcell"><input type="text" name="x_lower" value=""></td>
+        <td class="repcell">Maximum X value</td>
+        <td class="repcell"><input type="text" name="x_upper" value=""></td>
+    </tr>
+
+        <br />
+        <br />
+
+    <tr>
+        <td class="repcell">Minimum Y value</td>
+        <td class="repcell"><input type="text" name="y_lower" value=""></td>
+        <td class="repcell">Maximum Y value</td>
+        <td class="repcell"><input type="text" name="y_upper" value=""></td>
+    </tr>
+
+        <br />
+        <br />
+
+    <tr>
+        <td class="repcell">Curve fit</td>
+        <td class="repcell"><select name="equation_type">
+            <option value="01">Linear</option>
+            <option value="02">Exponential</option>
+            <option value="03">Logarithmic</option>
+            <option value="04">Power</option>
+            <option value="05">Polynomial</option>
+        </select></td>
+        <td class="repcell">Polynomial Order</td>
+        <td class="repcell"><select name="poly_order">
+            <option value="02">2</option>
+            <option value="03">3</option>
+            <option value="04">4</option>
+        </select></td>
+    </tr>
+        <br />
+        <br />
+    <tr>
+        <td class="applybg" colspan="4"><img src="/static/images/spacer.gif" height="3"></td>
+    </tr>
+
+        <button type="submit" class="btn btn-success btn-sm" value="Submit">
+            <i class="fa fa-dot-circle-o"></i> 提交
+        </button>
+        <button type="reset" class="btn btn-success btn-sm" value="Reset">
+            <i class="fa fa-ban"></i> 重置
+        </button>
+    </div>
+</div>
+</form>
+
+{% endblock %}

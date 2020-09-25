@@ -187,7 +187,7 @@ def SUPPLIERLIST():
     else:
         sql = "select * from suppliers where Region="+"'"+str(Region)+"'"+" and "+str(Material)+"='*'"
 
-    datas_pmsuppliers = db_manage.query_data_pmsuppliers(sql)
+    datas_pmsuppliers = db_manage.query_data(sql)
 
     return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html", datas_pmsuppliers=datas_pmsuppliers)
 
@@ -254,6 +254,12 @@ def SearchByGrade():
     return render_template("pages/SEARCH BY GRADE/SearchByGrade.html")
 
 
+@app.route("/DetailsofGrade", methods=['GET', 'POST'])
+def DetailsofGrade():
+    return render_template("pages/SEARCH BY GRADE/DetailsofGrade.html")
+
+
+
 @app.route("/PropertySearch")
 def PropertySearch():
     return render_template("pages/ADVANCED SEARCH/PropertySearch.html")
@@ -299,3 +305,11 @@ def empty_data_cart():
     return render_template("pages/data/empty_data_cart.html")
 
 
+@app.route("/SelectPropertiesForCrossPlot")
+def SelectPropertiesForCrossPlot():
+    return render_template("pages/PLOT/SelectPropertiesForCrossPlot.html")
+
+
+@app.route("/ShowCrossPlot", methods=['GET', 'POST'])
+def ShowCrossPlot():
+    return render_template("pages/PLOT/ShowCrossPlot.html")

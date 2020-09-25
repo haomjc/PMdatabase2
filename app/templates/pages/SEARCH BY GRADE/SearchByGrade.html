@@ -1,10 +1,401 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base_menu.html" %}
+{% block content %}
 
-</body>
-</html>
+<form id="DetailsofGrade" action="{{url_for("DetailsofGrade")}}" method="post" >
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">选择制造方式</strong>
+    </div>
+    <div class="card-body">
+
+        <select name="manufacturing technology" data-placeholder="Select manufacturing technology..."
+                class="standardSelect"
+                tabindex="1">
+            <option value="All">--全部都选--</option>
+            <option value="Conventional PM">传统PM(粉末冶金)</option>
+            <option value="MIM">MIM(金属注射成型)</option>
+
+        </select>
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">选择材料类型</strong>
+    </div>
+    <div class="card-body">
+
+        <select name="material type" data-placeholder="Select material type ... " class="standardSelect"
+                tabindex="1">
+            <option value="All">--全部都选--</option>
+            <option value="Ferrous structural">Ferrous structural</option>
+            <option value="Non-ferrous structural">Non-ferrous structural</option>
+            <option value="Bearing">Bearing</option>
+            <option value="Stainless Steel">Stainless Steel</option>
+        </select>
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Select a material grade ...</strong>
+    </div>
+    <div class="card-body">
+        <td class="repcell">Grade</td>
+        <select name="Grade" data-placeholder="Grade"
+                class="standardSelect"
+                tabindex="1">
+                <option value="0000" selected="">Select ...</option>
+                <option value="30512">AC-2014</option>
+                <option value="29860">Al-0.6Mg-0.5Si-0.1Cu</option>
+                <option value="29861">Al-0.6Mg-0.5Si-3.4Cu</option>
+                <option value="29859">Al-2Mg-0.4Zn-0.5Cu</option>
+                <option value="27051">C-0000</option>
+                <option value="29828">C-0000+1.5Gr</option>
+                <option value="29829">C-T10+1Zn</option>
+                <option value="27363">C-T10-K/CT-1000-K</option>
+                <option value="27052">C-T10/CT-1000</option>
+                <option value="27364">C-T10G-K/CTG-1001-K</option>
+                <option value="28633">C-T8Z4-K</option>
+                <option value="28634">C-T8Z4G-K</option>
+                <option value="29827">CL-N18Z/CNZ-1818</option>
+                <option value="28456">CL-T10-K</option>
+                <option value="28457">CL-T10G-K</option>
+                <option value="27045">CL-Z10/CZ-1000</option>
+                <option value="27047">CL-Z20/CZ-2000</option>
+                <option value="27049">CL-Z30/CZ-3000</option>
+                <option value="29856">CNZP-1816</option>
+                <option value="27046">CZP-1002</option>
+                <option value="27048">CZP-2002</option>
+                <option value="27050">CZP-3002</option>
+                <option value="28481">Cu-10.0Sn-0.5P-0.5Gr-K</option>
+                <option value="28482">Cu-10.0Sn-0.5P-1.5Gr-K</option>
+                <option value="28499">Cu-10.0Sn-0.5P-3.0Mo-2.0C-K</option>
+                <option value="28485">Cu-10.0Sn-0.5P-3.0Mo-2.0Gr-K</option>
+                <option value="28490">Cu-10.0Sn-1.0Zn-0.5C-K</option>
+                <option value="28489">Cu-10.0Sn-1.0Zn-K</option>
+                <option value="28475">Cu-10.0Sn-3.0Gr-K</option>
+                <option value="28476">Cu-10.0Sn-7.0Gr-K</option>
+                <option value="28478">Cu-10.5Sn-3.0Ni-2.0Gr-K</option>
+                <option value="28463">Cu-12.0Fe-4.0Sn-4.0Pb-K</option>
+                <option value="28464">Cu-14.0Fe-4.0Sn-4.0Pb-K</option>
+                <option value="29857">Cu-15Zn</option>
+                <option value="28458">Cu-17.3Fe-3.9Sn-K</option>
+                <option value="29842">Cu-2.5Zn-9-Sn</option>
+                <option value="28459">Cu-20.0Fe-5.0Sn-K</option>
+                <option value="28466">Cu-20.0Ni-2.0C-0.3P-K</option>
+                <option value="28467">Cu-25.0Ni-3.0C-0.5P-K</option>
+                <option value="28491">Cu-4.0Sn-9.0Zn-10.0C-K</option>
+                <option value="29858">Cu-42Zn-1Pb</option>
+                <option value="28461">Cu-45.0Fe-3.0Sn-0.2P-K</option>
+                <option value="28460">Cu-45.0Fe-4.0Sn-K</option>
+                <option value="28487">Cu-5.0Sn-5.0Pb-K</option>
+                <option value="28468">Cu-5.0Sn-K</option>
+                <option value="28477">Cu-5.5Ni-3.0Sn-K</option>
+                <option value="28479">Cu-5.5Ni-4.0Sn-1.0Gr-K</option>
+                <option value="28462">Cu-52.5Fe-2.0Sn-0.3P-K</option>
+                <option value="28465">Cu-56.0Fe-4.0Sn-8.0Zn-K</option>
+                <option value="28488">Cu-6.0Sn-4.0Pb-K</option>
+                <option value="28480">Cu-8.0Sn-0.3P-K</option>
+                <option value="28470">Cu-8.0Sn-0.5Gr-K</option>
+                <option value="28486">Cu-8.0Sn-1.0Gr-1.0Mo-0.3P-K</option>
+                <option value="28471">Cu-8.0Sn-2.0Gr-K</option>
+                <option value="28472">Cu-8.0Sn-3.0Gr-K</option>
+                <option value="28473">Cu-8.0Sn-4.0C-K</option>
+                <option value="28469">Cu-8.0Sn-K</option>
+                <option value="28474">Cu-8.5Sn-4.5Gr-K</option>
+                <option value="28483">Cu-9.0Sn-0.2Gr-0.3P-K</option>
+                <option value="28484">Cu-9.0Sn-1.0Gr-0.3P-K</option>
+                <option value="28492">Cu-9.0Sn-1.5Zn-7.0C-K</option>
+                <option value="28430">F-00-K/F-0000-K</option>
+                <option value="26424">F-00/F-0000</option>
+                <option value="27328">F-00C1</option>
+                <option value="28431">F-00C2-K/FC-0200-K</option>
+                <option value="26427">F-00C2/FC-0200</option>
+                <option value="29095">F-00C2P</option>
+                <option value="30223">F-00C3</option>
+                <option value="28496">F-00C51T-K</option>
+                <option value="28497">F-00C52T-K</option>
+                <option value="28498">F-00C53T-K</option>
+                <option value="28495">F-00C75T-K</option>
+                <option value="28494">F-00C79T-K</option>
+                <option value="27372">F-00N2/FN-0200</option>
+                <option value="27329">F-00N2C</option>
+                <option value="27853">F-00N36</option>
+                <option value="27373">F-00N4/FN-0400</option>
+                <option value="27854">F-00N45</option>
+                <option value="27855">F-00N47</option>
+                <option value="26788">F-00P05/FY-4500</option>
+                <option value="27852">F-00P06</option>
+                <option value="28635">F-03G3-K/FG-0303-K</option>
+                <option value="28433">F-05-K/F-0005-K</option>
+                <option value="26425">F-05/F-0005</option>
+                <option value="27843">F-05C1</option>
+                <option value="28432">F-05C2-K/FC-0205K</option>
+                <option value="26428">F-05C2/FC-0205</option>
+                <option value="27324">F-05C2P</option>
+                <option value="27325">F-05C3</option>
+                <option value="28439">F-05C3-K</option>
+                <option value="30358">F-05C5</option>
+                <option value="28441">F-05C7-K</option>
+                <option value="27191">F-05N2/FN-0205</option>
+                <option value="27859">F-05N2C</option>
+                <option value="27857">F-05N3</option>
+                <option value="27858">F-05N3C</option>
+                <option value="27374">F-05N4/FN-0405</option>
+                <option value="27865">F-05N4C</option>
+                <option value="27860">F-05N6C</option>
+                <option value="29094">F-05P05</option>
+                <option value="26426">F-08/F-0008</option>
+                <option value="26429">F-08C2/FC-0208</option>
+                <option value="27850">F-08C2P</option>
+                <option value="27844">F-08C3</option>
+                <option value="27845">F-08C4</option>
+                <option value="30355">F-08C5</option>
+                <option value="29470">F-08C5/FC-0508</option>
+                <option value="28636">F-08MnSMoS-K</option>
+                <option value="28637">F-08MoS-K</option>
+                <option value="27192">F-08N2/FN-0208</option>
+                <option value="27375">F-08N4/FN-0408</option>
+                <option value="27861">F-08N4C</option>
+                <option value="27846">F-10C10</option>
+                <option value="28438">F-10C2-K/FC0210</option>
+                <option value="27856">F-10N2</option>
+                <option value="27847">F-15C15</option>
+                <option value="27851">F-18C5P</option>
+                <option value="27371">FC-0508</option>
+                <option value="27062">FD-00N4C/FD-0400</option>
+                <option value="27862">FD-00N7C</option>
+                <option value="29231">FD-00P06</option>
+                <option value="30455">FD-0100</option>
+                <option value="30454">FD-0100 + 0.8C</option>
+                <option value="30453">FD-0105</option>
+                <option value="26800">FD-05N2C/FD-0205</option>
+                <option value="26801">FD-05N4C/FD-0405</option>
+                <option value="27833">FD-05N4M</option>
+                <option value="27358">FD-05N5C</option>
+                <option value="29337">FD-08N2C/FD-0208</option>
+                <option value="27063">FD-08N4C/FD-0408</option>
+                <option value="29469">FD-08N5C</option>
+                <option value="27376">FL-00M07N/FL-4200</option>
+                <option value="28688">FL-00M1/FL-4400</option>
+                <option value="27378">FL-00N2M/FL-4600</option>
+                <option value="29232">FL-00N47</option>
+                <option value="27835">FL-00N4C</option>
+                <option value="29233">FL-00N50</option>
+                <option value="27892">FL-00P06</option>
+                <option value="27864">FL-05C2N</option>
+                <option value="27193">FL-05M07N/FL-4205</option>
+                <option value="27194">FL-05M1/FL-4405</option>
+                <option value="26799">FL-05N2M/FL-4605</option>
+                <option value="27890">FL-05N3C</option>
+                <option value="27834">FL-05N4C</option>
+                <option value="27883">FL-05N8M</option>
+                <option value="27889">FL-08C2</option>
+                <option value="27377">FL-08M07N/FL-4208</option>
+                <option value="27380">FL-08M1/FL-4408</option>
+                <option value="27379">FL-08N2M/FL-4608</option>
+                <option value="27863">FL-08N4C</option>
+                <option value="26789">FL-4805</option>
+                <option value="26790">FL-4808</option>
+                <option value="26793">FL-4808 +2Ni</option>
+                <option value="27326">FL-4900</option>
+                <option value="28689">FL-4905</option>
+                <option value="28690">FL-4908</option>
+                <option value="30438">FL-5100 + 0.4C</option>
+                <option value="30451">FL-5100 + 1.0Cu + 0.6C</option>
+                <option value="30447">FL-5100 + 1.0Cu + 1.0Ni + 0.4C</option>
+                <option value="30446">FL-5100 + 1.0Cu + 1.0Ni + 0.6C</option>
+                <option value="30452">FL-5100 + 1.0Cu + 2.0Ni + 0.6C</option>
+                <option value="30449">FL-5100 + 1.0Ni + 0.6C</option>
+                <option value="30450">FL-5100 + 2.0Cu + 1.0Ni + 0.6C</option>
+                <option value="30444">FL-5100 + 2.0Cu + 2.0Ni + 0.4C</option>
+                <option value="30440">FL-5100 +2.0Cu + 0.4C</option>
+                <option value="30442">FL-5100 +2.0Ni + 0.4C</option>
+                <option value="30439">FL-5108</option>
+                <option value="30448">FL-5108 + 1.0Cu + 1.0Ni</option>
+                <option value="30441">FL-5108 + 2.0Cu</option>
+                <option value="30445">FL-5108 + 2.0Cu + 2.0Ni</option>
+                <option value="30443">FL-5108 + 2.0Ni</option>
+                <option value="30182">FL-5208</option>
+                <option value="28941">FL-5300 + 0.1C</option>
+                <option value="28942">FL-5300 + 0.2C</option>
+                <option value="28943">FL-5300 + 0.3C</option>
+                <option value="27323">FL-5305</option>
+                <option value="29790">FL303+Cu/SS-303+Cu</option>
+                <option value="26781">FL303L/SS-303L</option>
+                <option value="29451">FL303N/SS-303N1</option>
+                <option value="29452">FL303N/SS-303N2</option>
+                <option value="29793">FL304+Cb/SS-304+Cb</option>
+                <option value="29794">FL304+Cu+Sn/SS-304+Cu+Sn</option>
+                <option value="29791">FL304+Cu/SS-304+Cu</option>
+                <option value="27840">FL304/SS-304</option>
+                <option value="26782">FL304L/SS-304L</option>
+                <option value="29453">FL304N/SS-304N1</option>
+                <option value="29454">FL304N/SS-304N2</option>
+                <option value="29795">FL316+Cu+Sn/SS-316+Cu+Sn</option>
+                <option value="29792">FL316+Cu/SS-316+Cu</option>
+                <option value="27841">FL316/SS-316</option>
+                <option value="26783">FL316L/SS-316L</option>
+                <option value="29455">FL316N/SS-316N1</option>
+                <option value="29456">FL316N/SS-316N2</option>
+                <option value="26784">FL409L/SS-409L</option>
+                <option value="27842">FL410/SS-410</option>
+                <option value="26785">FL410L/SS-410L</option>
+                <option value="29457">FL410N/SS-410N1</option>
+                <option value="27867">FL420</option>
+                <option value="26786">FL430L/SS-430L</option>
+                <option value="29458">FL430N/SS-430N2</option>
+                <option value="29797">FL434+Cb/SS-434+Cb</option>
+                <option value="29796">FL434/SS-434</option>
+                <option value="26787">FL434L/SS-434L</option>
+                <option value="29459">FL434N/SS-434N2</option>
+                <option value="30506">FLC-4208</option>
+                <option value="27201">FLC-4608</option>
+                <option value="27381">FLC-4908</option>
+                <option value="26792">FLC2-4805</option>
+                <option value="26791">FLC2-4808</option>
+                <option value="30181">FLD-05M2-C2/FLDC2-4905</option>
+                <option value="27322">FLD-05M2-N4C2/FLDN4C2-4905</option>
+                <option value="30183">FLD-08M2-N2/FLDN2-4908</option>
+                <option value="30184">FLD-08M2-N4C2/FLDN4C2-4908</option>
+                <option value="27327">FLDN2-4900</option>
+                <option value="27672">FLDN2-4905</option>
+                <option value="27673">FLDN2-4908</option>
+                <option value="29468">FLN-4205</option>
+                <option value="27195">FLN2-4400</option>
+                <option value="26798">FLN2-4405</option>
+                <option value="27196">FLN2-4408</option>
+                <option value="27882">FLN2-4905</option>
+                <option value="27197">FLN4-4405</option>
+                <option value="27200">FLN4-4408</option>
+                <option value="27198">FLN6-4405</option>
+                <option value="27199">FLNC-4405</option>
+                <option value="27202">FLNC-4408</option>
+                <option value="27887">FS-0300</option>
+                <option value="27849">FX-00C22</option>
+                <option value="27837">FX-05C10/FX-1005</option>
+                <option value="27848">FX-05C17</option>
+                <option value="27839">FX-05C20/FX-2005</option>
+                <option value="27836">FX-05C5</option>
+                <option value="29450">FX-08C10/FX-1008</option>
+                <option value="27838">FX-08C20/FX-2008</option>
+                <option value="26803">FY-8000</option>
+                <option value="29235">Fe-0.4Mo-0.6P-2.0C</option>
+                <option value="26794">Fe-0.7Si-0.8C</option>
+                <option value="27872">Fe-0.8Cr-5.0Cu-0.2Mo-0.6Mn-1.8C</option>
+                <option value="26797">Fe-0.9Mn-1Ni-0.75Cr-0.85Mo-0.35C</option>
+                <option value="27885">Fe-1.0C-0.5S</option>
+                <option value="27868">Fe-1.0Cr-0.35Mo-0.7Mn-0.73C</option>
+                <option value="29236">Fe-1.0Cr-4.0Ni-1.5Cu-0.5Mo-0.1Mn-0.7C</option>
+                <option value="27870">Fe-1.0Cr-4.0Ni-1.5Cu-0.5Mo-0.7C</option>
+                <option value="27891">Fe-1.0Cu-6.0Ni-0.5Mo-0.15Mn-0.55C</option>
+                <option value="27873">Fe-1.2Cr-1.2Ni-5.0Mo-0.3Si-13.0Co-0.8C</option>
+                <option value="27876">Fe-1.5Cr-0.8Ni-0.9Mo-3.2Co-0.1V-0.9C</option>
+                <option value="29234">Fe-1.5Cu-4.0Ni-0.5Mo-0.8C</option>
+                <option value="27879">Fe-1.5Mo-0.5P</option>
+                <option value="27877">Fe-1.9Cr-0.72Ni-2.30Mo-0.1Si-0.1V-6.0Co-0.8C</option>
+                <option value="29237">Fe-1.9Cr-0.72Ni-2.30Mo-0.1Si-6.0Co-0.1V-0.8C</option>
+                <option value="27895">Fe-11.5Cr-1.5Ni-1.0Mo-0.8Si-0.5P-2.4C</option>
+                <option value="28455">Fe-16Cu-0.35Mo-0.55W-0.25V-0.35Cr-0.8C-K</option>
+                <option value="28442">Fe-17Cu-4Gr-K</option>
+                <option value="28443">Fe-18Cu-1C-K</option>
+                <option value="28434">Fe-18Cu-K</option>
+                <option value="28444">Fe-19Cu-0.8C-K</option>
+                <option value="28445">Fe-19Cu-2.5Gr-K</option>
+                <option value="27871">Fe-2.0Cr-5.0Cu-0.2Mo-0.6Mn-1.8C</option>
+                <option value="29239">Fe-2.0Si</option>
+                <option value="27875">Fe-2.2Cr-0.7Ni-3.6Mo-0.3Si-9.0Co-0.1V-0.8C</option>
+                <option value="27886">Fe-2.5Si</option>
+                <option value="27874">Fe-2.6Cr-0.6Ni-5.0Mo-0.4Si-12.0Co-0.1V-0.8C</option>
+                <option value="28435">Fe-20Cu-0.3C-K</option>
+                <option value="28446">Fe-20Cu-1Gr-K</option>
+                <option value="28493">Fe-20Cu-2C-K</option>
+                <option value="28436">Fe-20Cu-K</option>
+                <option value="28437">Fe-21Cu-K</option>
+                <option value="28448">Fe-27.5Cu-2Sn-K</option>
+                <option value="26795">Fe-2Ni-0.85Mo-0.7Si-0.5C</option>
+                <option value="27869">Fe-3.0Cr-0.3Mo-0.3V-0.9C</option>
+                <option value="27880">Fe-3.0Ni-0.75Mn-0.3C</option>
+                <option value="27888">Fe-3.5Si</option>
+                <option value="28451">Fe-31Cu-2Sn-0.5Gr-K</option>
+                <option value="28452">Fe-32Cu-3Sn-7.5Zn-K</option>
+                <option value="28440">Fe-3Cu-5Gr-K</option>
+                <option value="27893">Fe-4.3Cr-1.0Mo-1.0Mn-0.8Si-0.5P-2.0C</option>
+                <option value="29230">Fe-4.5Cu-0.28P-1.8C</option>
+                <option value="28453">Fe-44Cu-1Sn-1Zn-K</option>
+                <option value="28449">Fe-46Cu-1Sn-K</option>
+                <option value="28454">Fe-47Cu-2Sn-2Zn-0.5C-K</option>
+                <option value="28450">Fe-49Cu-2Sn-K</option>
+                <option value="26802">Fe-4Ni-0.85Mo-0.35Si-0.5C</option>
+                <option value="26796">Fe-4Ni-0.85Mo-0.7Si-0.5C</option>
+                <option value="28447">Fe-5.5Cu-0.55Sn-0.55P-3.5Gr-K</option>
+                <option value="27884">Fe-50.0Co</option>
+                <option value="27866">Fe-6.0Ni-1.0Cu-0.5Mo-0.15Mn-0.55C</option>
+                <option value="29238">Fe-8.0Cr-1.9Ni-2.0Mo-0.8Si-0.5P-2.6C</option>
+                <option value="27894">Fe-8.0Cr-2.6C-1.9Ni-2.0Mo-0.8Si-0.5P</option>
+                <option value="27878">Fe-9.5Cr-4.0Si</option>
+                <option value="30015">MIM-17-4PH</option>
+                <option value="30014">MIM-2200</option>
+                <option value="30051">MIM-2205</option>
+                <option value="30052">MIM-2208</option>
+                <option value="30012">MIM-2700</option>
+                <option value="30013">MIM-2705</option>
+                <option value="30019">MIM-304L/M-FL-304L</option>
+                <option value="30058">MIM-310/M-FL-310</option>
+                <option value="30018">MIM-316L/M-FL-316L</option>
+                <option value="30053">MIM-4120/M-FL-02Cr1M</option>
+                <option value="30011">MIM-4140/M-FL-04Cr1M</option>
+                <option value="30016">MIM-420/M-FL-420</option>
+                <option value="30017">MIM-430/M-FL-430</option>
+                <option value="30010">MIM-4340/M-FL-04N2Cr</option>
+                <option value="30059">MIM-440C/M-FL-440C</option>
+                <option value="30054">MIM-D2</option>
+                <option value="30024">MIM-F-15(Kovar)</option>
+                <option value="30056">MIM-FL-02N2Cr</option>
+                <option value="30021">MIM-Fe-3%Si/M-FL-00Si3</option>
+                <option value="30022">MIM-Fe-7%Si</option>
+                <option value="30057">MIM-Fe47%Ni/M-FL-00N47</option>
+                <option value="30023">MIM-Fe50%Co/M-FL-00Co50</option>
+                <option value="30020">MIM-Fe50%Ni/M-FL-00N50</option>
+                <option value="30055">MIM-M47</option>
+                <option value="30150">MIM-Ti</option>
+                <option value="30151">MIM-Ti-A6V4</option>
+                <option value="30356">P/F-00C2</option>
+                <option value="30274">P/F-05C2</option>
+                <option value="30357">P/F-05C3</option>
+                <option value="30359">P/F-08C2</option>
+                <option value="29460">P/F-1020</option>
+                <option value="29461">P/F-1060</option>
+                <option value="29462">P/F-11C45</option>
+                <option value="27382">P/F-11C60</option>
+                <option value="29463">P/F-4220</option>
+                <option value="29464">P/F-4240</option>
+                <option value="27383">P/F-4260</option>
+                <option value="29465">P/F-4620</option>
+                <option value="29466">P/F-4640</option>
+                <option value="27881">P/F-4650</option>
+                <option value="27384">P/F-4660</option>
+                <option value="29467">P/F-4680</option>
+                <option value="30495">P/FLN2-4408</option>
+                <option value="29798">SS-17-4PH</option>
+                <option value="29830">W-Cu</option>
+                <option value="29831">W-Cu-Ni</option>
+                <option value="29832">W-Ni-Fe</option>
+        </select>
+        <br/>
+        <br/>
+
+        <button type="submit" class="btn btn-success btn-sm" value="Submit">
+            <i class="fa fa-dot-circle-o"></i> 提交
+        </button>
+        <button type="reset" class="btn btn-success btn-sm" value="Reset">
+            <i class="fa fa-ban"></i> 重置
+        </button>
+    </div>
+</div>
+
+</form>
+{% endblock %}
