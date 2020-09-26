@@ -1,10 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "base_menu.html" %}
+{% block content %}
+<form class="formmargin" id="form" name="form" onsubmit="try{return checkName();}catch(everything){return true;}"
+      enctype="multipart/form-data" method="post"
+      action="controlservlet?command=process&amp;process=__epma_SearchbyGrade&amp;step=7" accept-charset="UTF-8">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+            <td colspan="4" valign="top" class="maintbar"><img src="../images/spacer.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+            <td width="1" class="maintbar"><img src="../images/spacer.gif" width="1" height="26" align="middle"></td>
+            <td class="maintbar" valign="middle" colspan="1" nowrap=""><span class="maintbartxt"><b>Details of grade MIM-2205 (MIM Grade Help - <a
+                    href="javascript:void(0);" onclick="showHelpPopup()"><img src="imageservlet?name=epma_help"
+                                                                              align="absmiddle" border="0"></a>)</b>&nbsp;</span><img
+                    src="../images/spacer.gif" width="50" height="1" align="absmiddle"></td>
+            <td class="exptitlebarbg" align="right" nowrap=""><img onclick="return nCodeHelpInWindow();"
+                                                                   style="cursor:pointer;cursor:hand;"
+                                                                   src="../images/help.png" width="16" height="16"
+                                                                   align="absmiddle" alt="Help" title="Help"><img
+                    onclick="javascript:top.main.location.href='../pages/main/homepage.jsp';"
+                    style="cursor:pointer;cursor:hand;" src="../images/close.png" width="16" height="16"
+                    align="absmiddle" alt="Close" title="Close">&nbsp;&nbsp;
+            </td>
+        </tr>
+        <!--<tr><td colspan="3" valign="top" class="maintbar"><img src="../images/spacer.gif" width="1" height="1"></td></tr>-->
+        <tr>
+            <td colspan="4" height="1" bgcolor="#999999"><img src="../images/spacer.gif" width="1" height="1"></td>
+        </tr>
+        <tr>
+            <td colspan="3" height="1" bgcolor="#ffffff"><img src="../images/spacer.gif" width="1" height="1"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table class="atttable" cellspacing="0" cellpadding="0" align="center" width="98%">
+        <tbody>
+        <tr>
+            <td class="reptitle3" colspan="3"><b>Chemical Composition</b></td>
+            <td class="reptitle3" colspan="2">%content</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Carbon</td>
+            <td class="repcell" colspan="2" nowrap="">0.38 - 0.5</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Manganese</td>
+            <td class="repcell" colspan="2" nowrap="">up to 0.01</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Nickel</td>
+            <td class="repcell" colspan="2" nowrap="">2.0 - 8.0</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Chromium</td>
+            <td class="repcell" colspan="2" nowrap="">up to 0.04</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Silicon</td>
+            <td class="repcell" colspan="2" nowrap="">up to 0.12</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Phosphorus</td>
+            <td class="repcell" colspan="2" nowrap="">up to 0.02</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Sulfur</td>
+            <td class="repcell" colspan="2" nowrap="">up to 0.01</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Oxygen</td>
+            <td class="repcell" colspan="2" nowrap="">up to 0.4</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Iron</td>
+            <td class="repcell" colspan="2" nowrap="">91.53 - 97.46</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table id="Manufacturing Conditions" class="atttable" cellspacing="0" cellpadding="0" align="center" width="98%">
+        <tbody>
+        <tr>
+            <td class="reptitle3" colspan="3"><b>Manufacturing Conditions</b>&nbsp;<a href="javascript:void(0);"
+                                                                                      onclick="showHelpPopup()"><img
+                    src="imageservlet?name=epma_help" align="absmiddle" border="0"></a></td>
+            <td class="reptitle3" colspan="2">Number of datasets<a href="javascript:void(0);"
+                                                                   onclick="showHelpPopupSets()"><img
+                    src="imageservlet?name=epma_help" align="absmiddle" border="0"></a></td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Conventional Cooling</td>
+            <td class="repcell" colspan="2" nowrap="">1 of 4</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Heat Treated</td>
+            <td class="repcell" colspan="2" nowrap="">2 of 4</td>
+        </tr>
+        <tr>
+            <td class="repcell" colspan="3" nowrap="">Quenched and Tempered</td>
+            <td class="repcell" colspan="2" nowrap="">2 of 4</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table id="Mechanical Properties - Density Range : (7.5 to 7.7)" class="atttable" cellspacing="0" cellpadding="0" align="center" width="98%">
+        <tbody>
+        <tr>
+            <td class="reptitle3" colspan="3"><b>Mechanical Properties - Density Range : (7.5 to 7.7)</b></td>
+            <td class="reptitle3" colspan="2"><a title="Property Cross Plot"
+                                                 href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyCrossPlot&amp;step=-1&amp;grade=30051&amp;type=mechanical"><img
+                    src="imageservlet?name=epma_plot" border="0" align="absmiddle">&nbsp;Cross Plot</a></td>
+        </tr>
+        <tr>
+            <td class="attheader">Property</td>
+            <td class="attheader">As Sintered Range</td>
+            <td class="attheader">As Sintered Mean</td>
+            <td class="attheader">Heat Treated Range</td>
+            <td class="attheader">Heat Treated Mean</td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_UTS"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Ultimate Tensile Strength [MPa]</a>
+            </td>
+            <td class="repcell" nowrap="">390 - 490</td>
+            <td class="repcell" nowrap="">440</td>
+            <td class="repcell" nowrap="">1150 - 1470</td>
+            <td class="repcell" nowrap="">1310</td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Yield"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Yield stress [MPa]</a></td>
+            <td class="repcell" nowrap="">180</td>
+            <td class="repcell" nowrap="">180</td>
+            <td class="repcell" nowrap="">1030 - 1160</td>
+            <td class="repcell" nowrap="">1090</td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Elongation"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Elongation [%]</a></td>
+            <td class="repcell" nowrap="">33</td>
+            <td class="repcell" nowrap="">33</td>
+            <td class="repcell" nowrap="">5.3 - 5.6</td>
+            <td class="repcell" nowrap="">5.45</td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Hard_HRF"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Hardness (HRF) []</a></td>
+            <td class="repcell" nowrap="">91.1</td>
+            <td class="repcell" nowrap="">91.1</td>
+            <td class="repcell" nowrap=""></td>
+            <td class="repcell" nowrap=""></td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Hard_HRB"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Hardness (HRB) []</a></td>
+            <td class="repcell" nowrap="">60</td>
+            <td class="repcell" nowrap="">60</td>
+            <td class="repcell" nowrap=""></td>
+            <td class="repcell" nowrap=""></td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Hard_HRA"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Hardness (HRA) []</a></td>
+            <td class="repcell" nowrap="">39.5 - 49.5</td>
+            <td class="repcell" nowrap="">44.5</td>
+            <td class="repcell" nowrap="">68.2 - 73.5</td>
+            <td class="repcell" nowrap="">70.8</td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Hard_HRC"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Hardness (HRC) []</a></td>
+            <td class="repcell" nowrap=""></td>
+            <td class="repcell" nowrap=""></td>
+            <td class="repcell" nowrap="">35.7 - 45.8</td>
+            <td class="repcell" nowrap="">40.8</td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Hard_Vickers"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Hardness (Vickers) []</a></td>
+            <td class="repcell" nowrap="">107 - 150</td>
+            <td class="repcell" nowrap="">128</td>
+            <td class="repcell" nowrap="">351 - 456</td>
+            <td class="repcell" nowrap="">403</td>
+        </tr>
+        <tr>
+            <td class="repcell" nowrap=""><a title="Plot Property"
+                                             href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyBarPlot&amp;step=-1&amp;grade=30051&amp;bar_property_x=Mech_Hard_Brinell"><img
+                    src="imageservlet?name=epma_plot" align="absmiddle" border="0">&nbsp;Hardness (Brinell) []</a></td>
+            <td class="repcell" nowrap="">107 - 150</td>
+            <td class="repcell" nowrap="">128</td>
+            <td class="repcell" nowrap="">333 - 430</td>
+            <td class="repcell" nowrap="">381</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table id="Fatigue Properties" class="atttable" cellspacing="0" cellpadding="0" align="center" width="98%">
+        <tbody>
+        <tr>
+            <td class="reptitle3" colspan="3"><b>Fatigue Properties</b></td>
+            <td class="reptitle3" colspan="2"><a title="Property Cross Plot"
+                                                 href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyCrossPlot&amp;step=-1&amp;grade=30051&amp;type=fatigue"><img
+                    src="imageservlet?name=epma_plot" border="0" align="absmiddle">&nbsp;Cross Plot</a></td>
+        </tr>
+        <tr>
+            <td class="attheader">Property</td>
+            <td class="attheader">As Sintered Range</td>
+            <td class="attheader">As Sintered Mean</td>
+            <td class="attheader">Heat Treated Range</td>
+            <td class="attheader">Heat Treated Mean</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table id="datatable" class="atttable" cellspacing="0" cellpadding="0" align="center" width="98%">
+        <tbody>
+        <tr>
+            <td class="reptitle3" colspan="3"><b>Physical Properties</b></td>
+            <td class="reptitle3" colspan="2"><a title="Property Cross Plot"
+                                                 href="controlservlet?command=process&amp;process=__epma_SearchbyGrade_PropertyCrossPlot&amp;step=-1&amp;grade=30051&amp;type=physical"><img
+                    src="imageservlet?name=epma_plot" border="0" align="absmiddle">&nbsp;Cross Plot</a></td>
+        </tr>
+        <tr>
+            <td class="attheader">Property</td>
+            <td class="attheader">As Sintered Range</td>
+            <td class="attheader">As Sintered Mean</td>
+            <td class="attheader">Heat Treated Range</td>
+            <td class="attheader">Heat Treated Mean</td>
+        </tr>
+        <tr>
+            <td class="applybg" colspan="5"><img src="../images/spacer.gif" height="3"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="atttable">
+        <tbody>
+        <tr>
+            <td nowrap=""><a title="Add grade to data cart"
+                             href="controlservlet?command=process&amp;process=__epma_DataCart_Add&amp;step=-1&amp;grades=30051,"><img
+                    src="imageservlet?name=epma_cart_add" border="0" align="absmiddle">&nbsp;Add to data cart</a>&nbsp;&nbsp;<a
+                    title="Link to suppliers"
+                    href="controlservlet?command=process&amp;process=__epma_supplier_report&amp;step=-1&amp;supply_type=07&amp;region=00"><img
+                    border="0" src="imageservlet?name=epma_supplier_comp" alt="Link to suppliers" align="absmiddle">&nbsp;Link
+                to Suppliers</a>&nbsp;&nbsp;&nbsp;<a title="Download form in comma separated format"
+                                                     href="javascript:void(0);" onclick="doCSV()"><img border="0"
+                                                                                                       src="imageservlet?name=epma_csv"
+                                                                                                       alt="Download form in comma separated format"
+                                                                                                       align="absmiddle">&nbsp;Excel
+                Download</a>&nbsp;<a title="Download FEA File"
+                                     href="controlservlet?command=process&amp;process=__epma_Download_FE&amp;grade=30051&amp;step=-1"><img
+                    border="0" src="imageservlet?name=epma_fea" alt="Download FEA File" align="absmiddle">&nbsp;Download
+                FEA File</a>&nbsp;<a title="Define new search"
+                                     href="controlservlet?command=process&amp;process=__epma_SearchbyGrade&amp;step=-1"><img
+                    src="imageservlet?name=epma_search_tdo" border="0" align="absmiddle">&nbsp;Define new search</a>
+            </td>
+            <td align="right"><a href="../pages/main/homepage.jsp"><img border="0" src="imageservlet?name=epma_close"
+                                                                        alt="Close" align="absmiddle">&nbsp;Close</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <script>var container="";var container2="";var objrefbutton = new Image();</script>
+    <script>
+        function doCSV(){var strURL = 'formconverter?output=csv&close=false'; window.open(strURL,'ncpop_1601111927343','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=auto,resizable=1,width=500,height=400');}function showHelpPopup(){var strURL = 'processservlet2?process=__epma_MIM_Info&step=-1';window.open(strURL,'thispopup','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=0,width=500,height=410');}function showHelpPopupSets(){var strURL = 'processservlet2?process=__epma_num_of_datasets_help&step=-1';window.open(strURL,'thispopup','toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=0,width=500,height=410');}
+    </script>
+    <script language="javascript">
+        function checkName(){try{if(document.form.objname.value == ""){ alert("Please enter a name for this object");return false;}}catch(everything){return true;}}
+    </script>
+    <script language="javascript"></script>
+</form>
+{% endblock %}

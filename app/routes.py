@@ -16,6 +16,7 @@ from pyecharts.faker import Faker
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
     # user = User.query.filter_by(username=username).first_or_404()
     # return redirect('app/templates/index.html')
@@ -249,9 +250,14 @@ def FatigueProperties():
     return render_template("pages/searchbyproperties/FatigueProperties.html")
 
 
-@app.route("/SearchByGrade")
-def SearchByGrade():
-    return render_template("pages/SEARCH BY GRADE/SearchByGrade.html")
+@app.route("/SearchByGradePowderMetallurgy")
+def SearchByGradePowderMetallurgy():
+    return render_template("pages/SEARCH BY GRADE/SearchByGradePowderMetallurgy.html")
+
+
+@app.route("/SearchByGradePlastic")
+def SearchByGradePlastic():
+    return render_template("pages/SEARCH BY GRADE/SearchByGradePlastic.html")
 
 
 @app.route("/DetailsofGrade", methods=['GET', 'POST'])

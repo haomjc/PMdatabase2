@@ -1,6 +1,13 @@
 {% extends "base_menu.html" %}
 {% block content %}
         <!-- partial -->
+<div class="row">
+<div class="col-12 doc-header">
+                <a class="btn btn-success" href="{{url_for('index')}}"><i class="mdi mdi-home mr-2"></i>Back to home</a>
+                <h1 class="text-primary mt-4">Documentation</h1>
+              </div>
+</div>
+<div class="row doc-content">
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="row">
@@ -1511,5 +1518,8 @@ Standard 35</b></span>
                     </div>
                 </div>
             </div>
+        </div>
+</div>
+
             <!-- content-wrapper ends -->
 {% endblock %}
