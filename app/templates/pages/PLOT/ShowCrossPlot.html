@@ -1,8 +1,5 @@
-{% extends "base_menu.html" %}
-{% block content %}
 
-
-<form id="datatable" class="atttable" action="{{url_for("ShowCrossPlot")}}" method="post">
+<form id="datatable" class="atttable" action={{url_for("ShowCrossPlot")}} method="post">
 
 <div class="card">
     <div class="card-header">
@@ -61,5 +58,3 @@
     </div>
 </div>
 </form>
-
-{% endblock %}

@@ -18,7 +18,6 @@
                 </th>
             </tr>
             </thead>
-
             <tbody id="sortBodyTag">
             <tr>
                 <td class="repcell">Pressed and Sintered</td>
@@ -56,16 +55,62 @@
                 <th>
                     < 7.45
                 </th>
+                <th>
+                    7.45 - 7.55
+                </th>
+                <th>
+                    7.55 - 7.65
+                </th>
+                <th>
+                    7.65 - 7.75
+                </th>
             </tr>
             </thead>
 
             <tbody id="sortBodyTag">
             <tr>
                 <td class="repcell"> Hardness (HRF) []</td>
+                <td class="repcell"></td>
+                <td class="repcell"></td>
                 <td class="repcell">99.6</td>
+                <td class="repcell"></td>
             </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Mechanical Properties</h4>
+    </div>
+    <div class="card-body">
+        <div class="custom-tab">
+
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active show" id="custom-nav-stress-strain-tab" data-toggle="tab"
+                       href="#custom-nav-stress-strain" role="tab" aria-controls="custom-nav-stress-strain" aria-selected="true">应力应变曲线</a>
+                    <a class="nav-item nav-link" id="custom-nav-possions-ratio-tab" data-toggle="tab"
+                       href="#custom-nav-possions-ratio" role="tab" aria-controls="custom-nav-possions-ratio" aria-selected="false">泊松比曲线</a>
+                </div>
+            </nav>
+            <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                <div class="tab-pane fade active show" id="custom-nav-stress-strain" role="tabpanel"
+                     aria-labelledby="custom-nav-stress-strain-tab">
+                    {% include "/pages/PLOT/ShowCrossPlot.html" %}
+                </div>
+                <div class="tab-pane fade" id="custom-nav-possions-ratio" role="tabpanel"
+                     aria-labelledby="custom-nav-possions-ratio-tab">
+                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
+                        retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
+                        Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, irure terry
+                        richardson ex sd. Alip placeat salvia cillum iphone. Seitan alip s cardigan american apparel,
+                        butcher voluptate nisi .
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
