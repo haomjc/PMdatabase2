@@ -262,7 +262,12 @@ def SearchByGradePlastic():
 
 @app.route("/DetailsofGrade", methods=['GET', 'POST'])
 def DetailsofGrade():
-    return render_template("pages/SEARCH BY GRADE/DetailsofGrade.html")
+    pie = get_pie()
+    bar = get_bar()
+    return render_template("pages/SEARCH BY GRADE/DetailsofGrade.html",
+                           pie_options=pie.dump_options(),
+                           bar_options=bar.dump_options()
+                           )
 
 
 
