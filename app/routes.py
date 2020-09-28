@@ -1,6 +1,8 @@
+from random import randrange
+
 from flask_login import current_user, login_user, logout_user, login_required
 from pyecharts.charts import Bar
-from pyecharts.charts.basic_charts import pie, bar
+from pyecharts.charts.basic_charts import pie, bar, line
 from werkzeug.urls import url_parse
 
 from app import app, db, db_manage
@@ -10,7 +12,8 @@ from app.forms import LoginForm, RegistrationForm
 from app.models import User
 
 from pyecharts import options as opts
-from pyecharts.charts import Pie
+from pyecharts.charts import Pie, Line
+
 from pyecharts.faker import Faker
 
 
@@ -260,15 +263,34 @@ def SearchByGradePlastic():
     return render_template("pages/SEARCH BY GRADE/SearchByGradePlastic.html")
 
 
+def get_line() -> Line:
+    sql = """
+        select sex,count(1) as cnt from user group by sex
+    """
+    datas = db_manage.query_data(sql)
+    c = (
+        Line()
+        .add_xaxis(["{}".format(i) for i in range(10)])
+        .add_yaxis(
+            series_name="",
+            y_axis=[randrange(50, 80) for _ in range(10)],
+            is_smooth=True,
+            label_opts=opts.LabelOpts(is_show=False),
+        )
+        .set_global_opts(
+            xaxis_opts=opts.AxisOpts(type_="value"),
+            yaxis_opts=opts.AxisOpts(type_="value"),
+        )
+    )
+    return c
+
+
 @app.route("/DetailsofGrade", methods=['GET', 'POST'])
 def DetailsofGrade():
-    pie = get_pie()
-    bar = get_bar()
+    line = get_line()
     return render_template("pages/SEARCH BY GRADE/DetailsofGrade.html",
-                           pie_options=pie.dump_options(),
-                           bar_options=bar.dump_options()
+                           line_options=line.dump_options()
                            )
-
 
 
 @app.route("/PropertySearch")
