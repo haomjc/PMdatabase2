@@ -12,12 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../style/progressbar.css">
 </head>
 <body class="margin claro" onhelp="return nCodeHelpInWindow();">
-<div id="loading_container_1" style="display: none;">
-    <div id="loading_overlay_1">
-        <div id="overlay_inner_1"><img src="../images/loaderb16.gif" height="16px" id="loaderimg" alt="Missing Image">&nbsp;&nbsp;Processing...
-        </div>
-    </div>
-</div>
+
 <script src="../js/progressbar.js"></script>
 <script src="../js/datepicker/moment.min.js"></script>
 <script src="../js/datepicker/pikaday.js"></script>
@@ -29,41 +24,7 @@
 <form class="formmargin" id="form" name="form" onsubmit="try{return checkName();}catch(everything){return true;}"
       enctype="multipart/form-data" method="post"
       action="controlservlet?command=process&amp;process=__epma_help_reports&amp;step=0" accept-charset="UTF-8">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tbody>
-        <tr>
-            <td colspan="4" valign="top" class="maintbar"><img src="../images/spacer.gif" width="1" height="1"></td>
-        </tr>
-        <tr>
-            <td width="1" class="maintbar"><img src="../images/spacer.gif" width="1" height="26" align="middle"></td>
-            <td class="maintbar" valign="middle" colspan="1" nowrap=""><span class="maintbartxt"><b>Help Page</b>&nbsp;</span><img
-                    src="../images/spacer.gif" width="50" height="1" align="absmiddle"></td>
-            <td class="exptitlebarbg" align="right" nowrap=""><img onclick="return nCodeHelpInWindow();"
-                                                                   style="cursor:pointer;cursor:hand;"
-                                                                   src="../images/help.png" width="16" height="16"
-                                                                   align="absmiddle" alt="Help" title="Help"><img
-                    onclick="javascript:top.main.location.href='../pages/main/homepage.jsp';"
-                    style="cursor:pointer;cursor:hand;" src="../images/close.png" width="16" height="16"
-                    align="absmiddle" alt="Close" title="Close">&nbsp;&nbsp;
-            </td>
-        </tr>
-        <!--<tr><td colspan="3" valign="top" class="maintbar"><img src="../images/spacer.gif" width="1" height="1"></td></tr>-->
-        <tr>
-            <td colspan="4" height="1" bgcolor="#999999"><img src="../images/spacer.gif" width="1" height="1"></td>
-        </tr>
-        <tr>
-            <td colspan="3" height="1" bgcolor="#ffffff"><img src="../images/spacer.gif" width="1" height="1"></td>
-        </tr>
-        </tbody>
-    </table>
-    <br>
-    <table class="atttable" cellspacing="0" cellpadding="0" align="center" width="98%">
-        <tbody>
-        <tr>
-            <td class="applybg" colspan="0"><img src="../images/spacer.gif" height="3"></td>
-        </tr>
-        </tbody>
-    </table>
+
     <table align="center" cellspacing="0" cellpadding="10" border="0" width="90%">
         <tbody>
         <tr>
@@ -71,8 +32,7 @@
                 <table border="0" cellpadding="5" cellspacing="1" bgcolor="#666666" width="100%">
                     <tbody>
                     <tr>
-                        <td class="formtextlge" bgcolor="#eeeeee" align="center"><b>Advanced Search and Download of Data
-                            to a Report</b></td>
+                        <td class="formtextlge" bgcolor="#eeeeee" align="center"><b>Advanced Search and Download of Data to a Report</b></td>
                     </tr>
                     </tbody>
                 </table>

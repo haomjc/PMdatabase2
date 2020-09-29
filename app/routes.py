@@ -46,7 +46,7 @@ def login():
 
         return redirect(url_for('index'))
 
-    return render_template('pages/LOGIN/login-2.html', title='登录页', form=form)
+    return render_template('pages/LOGIN/login.html', title='登录页', form=form)
 
 
 @app.route('/logout')
@@ -67,7 +67,7 @@ def register():
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
-    return render_template('pages/LOGIN/register-2.html', title='Register', form=form)
+    return render_template('pages/LOGIN/register.html', title='Register', form=form)
 
 
 # @app.route('/user/<username>')
@@ -265,15 +265,16 @@ def SearchByGradePlastic():
 
 def get_line() -> Line:
     sql = """
-        select sex,count(1) as cnt from user group by sex
+        select 行程,载荷 from pa46_tw200f6
     """
     datas = db_manage.query_data(sql)
+    # print(datas[0].values())
     c = (
         Line()
-        .add_xaxis(["{}".format(i) for i in range(10)])
+        .add_xaxis([list(i.values())[0] for i in datas])
         .add_yaxis(
             series_name="",
-            y_axis=[randrange(50, 80) for _ in range(10)],
+            y_axis=[list(i.values())[1] for i in datas],
             is_smooth=True,
             label_opts=opts.LabelOpts(is_show=False),
         )
