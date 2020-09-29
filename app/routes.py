@@ -263,24 +263,24 @@ def SearchByGradePlastic():
     return render_template("pages/SEARCH BY GRADE/SearchByGradePlastic.html")
 
 
-def get_line() -> Line:
-    sql = """
-        select 行程,载荷 from pa46_tw200f6
-    """
+def get_line(grade) -> Line:
+    sql = "select 应变0,应力0 from " + str(grade)
     datas = db_manage.query_data(sql)
     # print(datas[0].values())
     c = (
         Line()
-        .add_xaxis([list(i.values())[0] for i in datas])
+        .add_xaxis(
+            [list(data.values())[0] for data in datas]
+        )
         .add_yaxis(
             series_name="",
-            y_axis=[list(i.values())[1] for i in datas],
+            y_axis=[list(data.values())[1] for data in datas],
             is_smooth=True,
             label_opts=opts.LabelOpts(is_show=False),
         )
         .set_global_opts(
-            xaxis_opts=opts.AxisOpts(type_="value"),
-            yaxis_opts=opts.AxisOpts(type_="value"),
+            xaxis_opts=opts.AxisOpts(name="应变", type_="value", position="middle"),
+            yaxis_opts=opts.AxisOpts(name="应力", type_="value", position="middle"),
         )
     )
     return c
@@ -288,7 +288,9 @@ def get_line() -> Line:
 
 @app.route("/DetailsofGrade", methods=['GET', 'POST'])
 def DetailsofGrade():
-    line = get_line()
+    grade = request.form.get('Grade')
+    print(grade)
+    line = get_line(grade)
     return render_template("pages/SEARCH BY GRADE/DetailsofGrade.html",
                            line_options=line.dump_options()
                            )

@@ -1,7 +1,7 @@
 {% extends "base_menu.html" %}
 {% block content %}
 
-<form id="DetailsofGrade" action="{{url_for("DetailsofGrade")}}" method="post" >
+<form id="DetailsofGrade" action={{url_for("DetailsofGrade")}} method="post" >
 <div class="card">
     <div class="card-header">
         <strong class="card-title">选择制造方式</strong>
@@ -45,12 +45,12 @@
         <select name="Grade" data-placeholder="Grade"
                 class="standardSelect"
                 tabindex="1">
-                <option value="00" selected="">Select ...</option>
-                <option value="01">PA46 TS200F6</option>
-                <option value="02">PA46 TW341</option>
-                <option value="03">PA66 1300G</option>
-                <option value="04">PA66 1300S</option>
-                <option value="04">POM 100P</option>   
+<!--                <option value="00" selected="">Select ...</option>-->
+                <option value="PA46_TW200F6">PA46 TW200F6</option>
+                <option value="PA46_TW341">PA46 TW341</option>
+                <option value="PA66_1300G">PA66 1300G</option>
+                <option value="PA66_1300S">PA66 1300S</option>
+                <option value="POM_100P">POM 100P</option>
         </select>
         <br/>
         <br/>
