@@ -16,11 +16,18 @@
         lineChart.setOption({{line_options | safe}});
 </script>
 
-<div class="btn-group" role="group" aria-label="Basic example" align="middle">
-                          <button type="button" class="btn btn-outline-secondary">1</button>
-                          <button type="button" class="btn btn-outline-secondary">2</button>
-                          <button type="button" class="btn btn-outline-secondary">3</button>
-                          <button type="button" class="btn btn-outline-secondary">4</button>
-                          <button type="button" class="btn btn-outline-secondary">5</button>
-                        </div>
+<!--<div class="btn-group" role="group" aria-label="Basic example" align="middle">-->
+<!--                          <button type="button" class="btn btn-outline-secondary">1</button>-->
+<!--                          <button type="button" class="btn btn-outline-secondary">2</button>-->
+<!--                          <button type="button" class="btn btn-outline-secondary">3</button>-->
+<!--                          <button type="button" class="btn btn-outline-secondary">4</button>-->
+<!--                          <button type="button" class="btn btn-outline-secondary">5</button>-->
+<!--                        </div>-->
+
+<a href="{{ url_for('DetailsofGrade', gradeNum = gradeNum, pages = 0) }}"> /&nbsp;1 /&nbsp; </a>
+<a href="{{ url_for('DetailsofGrade', gradeNum = gradeNum, pages = 1) }}"> /&nbsp;2 /&nbsp; </a>
+<a href="{{ url_for('DetailsofGrade', gradeNum = gradeNum, pages = 2) }}"> /&nbsp;3 /&nbsp; </a>
+<a href="{{ url_for('DetailsofGrade', gradeNum = gradeNum, pages = 3) }}"> /&nbsp;4 /&nbsp; </a>
+<a href="{{ url_for('DetailsofGrade', gradeNum = gradeNum, pages = 4) }}"> /&nbsp;5 /&nbsp; </a>
+
 </body>

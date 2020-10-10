@@ -70,8 +70,8 @@ def register():
     return render_template('pages/LOGIN/register.html', title='Register', form=form)
 
 
-# @app.route('/user/<username>')
-@app.route('/<username>')
+@app.route('/user/<username>')
+#@app.route('/<username>')
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
@@ -189,7 +189,7 @@ def SUPPLIERLIST():
     if Material == 'All':
         sql = "select * from suppliers where Region=" + "'" + str(Region) + "'"
     else:
-        sql = "select * from suppliers where Region="+"'"+str(Region)+"'"+" and "+str(Material)+"='*'"
+        sql = "select * from suppliers where Region=" + "'" + str(Region) + "'" + " and " + str(Material) + "='*'"
 
     datas_pmsuppliers = db_manage.query_data(sql)
 
@@ -263,22 +263,22 @@ def SearchByGradePlastic():
     return render_template("pages/SEARCH BY GRADE/SearchByGradePlastic.html")
 
 
-def get_line(grade) -> Line:
-    sql = "select 应变0,应力0 from " + str(grade)
+def get_line(grade, pages) -> Line:
+    sql = "select 应变" + pages + ",应力" + pages + " from " + str(grade)
     datas = db_manage.query_data(sql)
-    # print(datas[0].values())
+    # print(list(data.values()) for data in datas)
     c = (
         Line()
-        .add_xaxis(
+            .add_xaxis(
             [list(data.values())[0] for data in datas]
         )
-        .add_yaxis(
+            .add_yaxis(
             series_name="",
             y_axis=[list(data.values())[1] for data in datas],
             is_smooth=True,
             label_opts=opts.LabelOpts(is_show=False),
         )
-        .set_global_opts(
+            .set_global_opts(
             xaxis_opts=opts.AxisOpts(name="应变", type_="value", position="middle"),
             yaxis_opts=opts.AxisOpts(name="应力", type_="value", position="middle"),
         )
@@ -286,13 +286,17 @@ def get_line(grade) -> Line:
     return c
 
 
-@app.route("/DetailsofGrade", methods=['GET', 'POST'])
-def DetailsofGrade():
+@app.route("/DetailsofGrade/<gradeNum>/<pages>", methods=['GET', 'POST'])
+def DetailsofGrade(gradeNum, pages):
     grade = request.form.get('Grade')
-    print(grade)
-    line = get_line(grade)
+    pages = pages
+    print(grade, pages)
+    if grade is None:
+        grade = gradeNum
+    line = get_line(grade, pages)
     return render_template("pages/SEARCH BY GRADE/DetailsofGrade.html",
-                           line_options=line.dump_options()
+                           line_options=line.dump_options(),
+                           gradeNum=grade
                            )
 
 
