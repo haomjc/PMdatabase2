@@ -1,8 +1,0 @@
-WTForms
-Werkzeug
-pyecharts
-Flask
-config
-PyMySQL
-SQLAlchemy
-alembic
