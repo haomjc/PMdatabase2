@@ -1,0 +1,78 @@
+2020-10-18T11:13:02.413212Z 0 [Warning] option 'read_buffer_size': unsigned value 0 adjusted to 8192
+2020-10-18T11:13:02.413268Z 0 [Warning] option 'read_rnd_buffer_size': unsigned value 0 adjusted to 1
+2020-10-18T11:13:02.413289Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2020-10-18T11:13:02.413299Z 0 [Warning] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2020-10-18T11:13:02.415281Z 0 [Note] C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe (mysqld 5.7.22-log) starting as process 21344 ...
+2020-10-18T11:13:02.428265Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2020-10-18T11:13:02.428934Z 0 [Note] InnoDB: Uses event mutexes
+2020-10-18T11:13:02.429552Z 0 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2020-10-18T11:13:02.430425Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-10-18T11:13:02.430987Z 0 [Note] InnoDB: Adjusting innodb_buffer_pool_instances from 8 to 1 since innodb_buffer_pool_size is less than 1024 MiB
+2020-10-18T11:13:02.432176Z 0 [Note] InnoDB: Number of pools: 1
+2020-10-18T11:13:02.432745Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2020-10-18T11:13:02.435469Z 0 [Note] InnoDB: Initializing buffer pool, total size = 8M, instances = 1, chunk size = 8M
+2020-10-18T11:13:02.436691Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2020-10-18T11:13:02.469974Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2020-10-18T11:13:02.471569Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2020-10-18T11:13:02.472836Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
+2020-10-18T11:13:02.698362Z 0 [ERROR] Plugin 'InnoDB' init function returned error.
+2020-10-18T11:13:02.699286Z 0 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2020-10-18T11:13:02.699985Z 0 [ERROR] Failed to initialize builtin plugins.
+2020-10-18T11:13:02.700463Z 0 [ERROR] Aborting
+
+2020-10-18T11:13:02.700799Z 0 [Note] Binlog end
+2020-10-18T11:13:02.701180Z 0 [Note] Shutting down plugin 'CSV'
+2020-10-18T11:13:02.701791Z 0 [Note] C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe: Shutdown complete
+
+2020-10-18T11:13:09.956360Z 0 [Warning] option 'read_buffer_size': unsigned value 0 adjusted to 8192
+2020-10-18T11:13:09.956418Z 0 [Warning] option 'read_rnd_buffer_size': unsigned value 0 adjusted to 1
+2020-10-18T11:13:09.956441Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2020-10-18T11:13:09.956451Z 0 [Warning] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2020-10-18T11:13:09.958144Z 0 [Note] C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe (mysqld 5.7.22-log) starting as process 22748 ...
+2020-10-18T11:13:09.966110Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2020-10-18T11:13:09.966722Z 0 [Note] InnoDB: Uses event mutexes
+2020-10-18T11:13:09.967140Z 0 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2020-10-18T11:13:09.967754Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-10-18T11:13:09.968242Z 0 [Note] InnoDB: Adjusting innodb_buffer_pool_instances from 8 to 1 since innodb_buffer_pool_size is less than 1024 MiB
+2020-10-18T11:13:09.969327Z 0 [Note] InnoDB: Number of pools: 1
+2020-10-18T11:13:09.969856Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2020-10-18T11:13:09.972482Z 0 [Note] InnoDB: Initializing buffer pool, total size = 8M, instances = 1, chunk size = 8M
+2020-10-18T11:13:09.973655Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2020-10-18T11:13:09.989184Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2020-10-18T11:13:09.989845Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2020-10-18T11:13:09.990486Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
+2020-10-18T11:13:10.312604Z 0 [ERROR] Plugin 'InnoDB' init function returned error.
+2020-10-18T11:13:10.313319Z 0 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2020-10-18T11:13:10.313935Z 0 [ERROR] Failed to initialize builtin plugins.
+2020-10-18T11:13:10.314410Z 0 [ERROR] Aborting
+
+2020-10-18T11:13:10.314752Z 0 [Note] Binlog end
+2020-10-18T11:13:10.315268Z 0 [Note] Shutting down plugin 'CSV'
+2020-10-18T11:13:10.315878Z 0 [Note] C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe: Shutdown complete
+
+2020-10-18T11:13:13.082100Z 0 [Warning] option 'read_buffer_size': unsigned value 0 adjusted to 8192
+2020-10-18T11:13:13.082156Z 0 [Warning] option 'read_rnd_buffer_size': unsigned value 0 adjusted to 1
+2020-10-18T11:13:13.082178Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2020-10-18T11:13:13.082188Z 0 [Warning] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2020-10-18T11:13:13.084030Z 0 [Note] C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe (mysqld 5.7.22-log) starting as process 16776 ...
+2020-10-18T11:13:13.092869Z 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2020-10-18T11:13:13.093520Z 0 [Note] InnoDB: Uses event mutexes
+2020-10-18T11:13:13.093979Z 0 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2020-10-18T11:13:13.094610Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2020-10-18T11:13:13.095115Z 0 [Note] InnoDB: Adjusting innodb_buffer_pool_instances from 8 to 1 since innodb_buffer_pool_size is less than 1024 MiB
+2020-10-18T11:13:13.096236Z 0 [Note] InnoDB: Number of pools: 1
+2020-10-18T11:13:13.096777Z 0 [Note] InnoDB: Not using CPU crc32 instructions
+2020-10-18T11:13:13.099461Z 0 [Note] InnoDB: Initializing buffer pool, total size = 8M, instances = 1, chunk size = 8M
+2020-10-18T11:13:13.100676Z 0 [Note] InnoDB: Completed initialization of buffer pool
+2020-10-18T11:13:13.128523Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2020-10-18T11:13:13.129184Z 0 [ERROR] InnoDB: The innodb_system data file 'ibdata1' must be writable
+2020-10-18T11:13:13.129813Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
+2020-10-18T11:13:13.458065Z 0 [ERROR] Plugin 'InnoDB' init function returned error.
+2020-10-18T11:13:13.458655Z 0 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2020-10-18T11:13:13.459241Z 0 [ERROR] Failed to initialize builtin plugins.
+2020-10-18T11:13:13.459719Z 0 [ERROR] Aborting
+
+2020-10-18T11:13:13.460063Z 0 [Note] Binlog end
+2020-10-18T11:13:13.460441Z 0 [Note] Shutting down plugin 'CSV'
+2020-10-18T11:13:13.461038Z 0 [Note] C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe: Shutdown complete
+
