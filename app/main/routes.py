@@ -26,7 +26,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 current_app.config['CKEDITOR_SERVE_LOCAL'] = True
 current_app.config['CKEDITOR_HEIGHT'] = 400
-current_app.config['CKEDITOR_FILE_UPLOADER'] = 'upload'
+current_app.config['CKEDITOR_FILE_UPLOADER'] = 'main.upload'
 # current_app.config['CKEDITOR_ENABLE_CSRF'] = True  # if you want to enable CSRF protect, uncomment this line
 
 
