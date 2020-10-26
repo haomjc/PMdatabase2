@@ -2,16 +2,16 @@ from datetime import datetime
 from random import randrange
 import os
 
-from flask_babel import get_locale
+from flask_babel import _, get_locale
 from flask_login import current_user, login_user, logout_user, login_required
 from pyecharts.charts import Bar
 from pyecharts.charts.basic_charts import pie, bar, line
 from werkzeug.urls import url_parse
 
-from app import app, db, db_manage
+from app import db, db_manage
 from flask import render_template, redirect, flash, url_for, request, send_from_directory, current_app
 
-from app.forms import LoginForm, RegistrationForm, PostForm, SearchForm
+from app.main.forms import PostForm, SearchForm
 from app.models import User, Post, Detail
 
 from pyecharts import options as opts
@@ -19,22 +19,22 @@ from pyecharts.charts import Pie, Line
 from flask_ckeditor import upload_success, upload_fail
 
 from pyecharts.faker import Faker
-from flask import g
+from flask import g, current_app
 from app.main import bp
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-app.config['CKEDITOR_SERVE_LOCAL'] = True
-app.config['CKEDITOR_HEIGHT'] = 400
-app.config['CKEDITOR_FILE_UPLOADER'] = 'upload'
-# app.config['CKEDITOR_ENABLE_CSRF'] = True  # if you want to enable CSRF protect, uncomment this line
+current_app.config['CKEDITOR_SERVE_LOCAL'] = True
+current_app.config['CKEDITOR_HEIGHT'] = 400
+current_app.config['CKEDITOR_FILE_UPLOADER'] = 'upload'
+# current_app.config['CKEDITOR_ENABLE_CSRF'] = True  # if you want to enable CSRF protect, uncomment this line
 
 
-app.secret_key = 'secret string'
+bp.secret_key = 'secret string'
 
 
-@app.route('/')
-@app.route('/index')
+@bp.route('/')
+@bp.route('/index')
 @login_required
 def index():
     # user = User.query.filter_by(username=username).first_or_404()
@@ -42,98 +42,7 @@ def index():
     return render_template('index.html', title='主页')
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-
-    form = LoginForm()
-
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
-            return redirect(url_for('login'))
-        login_user(user, remember=form.remember_me.data)
-
-        next_page = request.args.get('next')
-        if not next_page or url_parse(next_page).netloc != '':
-            next_page = url_for('index')
-
-        return redirect(url_for('index'))
-
-    return render_template('pages/LOGIN/login.html', title='登录页', form=form)
-
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
-
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Congratulations, you are now a registered user!')
-        return redirect(url_for('login'))
-    return render_template('pages/LOGIN/register.html', title='Register', form=form)
-
-
-@app.route('/user/<username>')
-# @app.route('/<username>')
-@login_required
-def user(username):
-    user = User.query.filter_by(username=username).first_or_404()
-    return render_template('user.html', title='主页', user=user)
-
-
-@app.route('/show_add_user')
-def show_add_user():
-    return render_template('pages/test/show_add_user.html')
-
-
-@app.route("/do_add_user", methods=['POST'])
-def do_add_user():
-    print(request.form)
-    name = request.form.get("name")
-    sex = request.form.get("sex")
-    age = request.form.get("age")
-    email = request.form.get("email")
-
-    sql = f"""
-    insert into user (name,sex,age,email)
-    values ('{name}','{sex}',{age},'{email}')
-    
-"""
-    print(sql)
-    db_manage.insert_or_update_data(sql)
-    return 'success'
-
-
-@app.route("/show_users")
-def show_users():
-    form = PostForm()
-    sql = "select id,name from user"
-    datas = db_manage.query_data(sql)
-    return render_template("pages/test/show_users.html", datas=datas, form=form)
-
-
-@app.route("/show_user/<user_id>")
-def show_user(user_id):
-    sql = "select * from user where id=" + user_id
-    datas = db_manage.query_data(sql)
-    user = datas[0]
-    return render_template("pages/test/show_user.html", user=user)
-
-
-@app.route("/show_echarts")
+@bp.route("/show_echarts")
 def show_echarts():
     bar = (
         Bar()
@@ -173,7 +82,7 @@ def get_bar() -> bar:
     return c
 
 
-@app.route("/show_myecharts")
+@bp.route("/show_myecharts")
 def show_myecharts():
     pie = get_pie()
     bar = get_bar()
@@ -184,22 +93,22 @@ def show_myecharts():
                            )
 
 
-@app.route("/SNFatigueData")
+@bp.route("/SNFatigueData")
 def SNFatigueData():
     return render_template("pages/FATIGUEDATA/SN Fatigue Data.html")
 
 
-@app.route("/StrainLifeData")
+@bp.route("/StrainLifeData")
 def StrainLifeData():
     return render_template("pages/FATIGUEDATA/Strain Life Data.html")
 
 
-@app.route("/supplierReport", methods=['GET', 'POST'])
+@bp.route("/supplierReport", methods=['GET', 'POST'])
 def supplierReport():
     return render_template("pages/LINKTOSUPPLIERS/supplierReport.html")
 
 
-@app.route("/SUPPLIERLIST", methods=['GET', 'POST'])
+@bp.route("/SUPPLIERLIST", methods=['GET', 'POST'])
 def SUPPLIERLIST():
     Region = request.form.get('Region')
     Material = request.form.get('Material')
@@ -213,32 +122,32 @@ def SUPPLIERLIST():
     return render_template("pages/LINKTOSUPPLIERS/SUPPLIERLIST.html", datas_pmsuppliers=datas_pmsuppliers)
 
 
-@app.route("/aboutmetalinjectionmoulding")
+@bp.route("/aboutmetalinjectionmoulding")
 def aboutmetalinjectionmoulding():
     return render_template("pages/PMinformation/aboutmetalinjectionmoulding.html")
 
 
-@app.route("/aboutpowdermetallurgy")
+@bp.route("/aboutpowdermetallurgy")
 def aboutpowdermetallurgy():
     return render_template("pages/PMinformation/aboutpowdermetallurgy.html")
 
 
-@app.route("/DesignationCodes")
+@bp.route("/DesignationCodes")
 def DesignationCodes():
     return render_template("pages/PMinformation/DesignationCodes.html")
 
 
-@app.route("/manufacturingconditions")
+@bp.route("/manufacturingconditions")
 def manufacturingconditions():
     return render_template("pages/PMinformation/manufacturingconditions.html")
 
 
-@app.route("/SearchonMechanicalProperties")
+@bp.route("/SearchonMechanicalProperties")
 def SearchonMechanicalProperties():
     return render_template("pages/searchbyproperties/SearchonMechanicalProperties.html")
 
 
-@app.route("/MechanicalProperties", methods=['GET', 'POST'])
+@bp.route("/MechanicalProperties", methods=['GET', 'POST'])
 def MechanicalProperties():
     manufacturingtechnology = request.form.get('manufacturing technology')
     materialtype = request.form.get('material type')
@@ -250,32 +159,32 @@ def MechanicalProperties():
     return render_template("pages/searchbyproperties/MechanicalProperties.html")
 
 
-@app.route("/SearchonPhysicalandMagneticProperties")
+@bp.route("/SearchonPhysicalandMagneticProperties")
 def SearchonPhysicalandMagneticProperties():
     return render_template("pages/searchbyproperties/SearchonPhysicalandMagneticProperties.html")
 
 
-@app.route("/PhysicalandMagneticProperties", methods=['GET', 'POST'])
+@bp.route("/PhysicalandMagneticProperties", methods=['GET', 'POST'])
 def PhysicalandMagneticProperties():
     return render_template("pages/searchbyproperties/PhysicalandMagneticProperties.html")
 
 
-@app.route("/SearchonFatigueProperties")
+@bp.route("/SearchonFatigueProperties")
 def SearchonFatigueProperties():
     return render_template("pages/searchbyproperties/SearchonFatigueProperties.html")
 
 
-@app.route("/FatigueProperties", methods=['GET', 'POST'])
+@bp.route("/FatigueProperties", methods=['GET', 'POST'])
 def FatigueProperties():
     return render_template("pages/searchbyproperties/FatigueProperties.html")
 
 
-@app.route("/SearchByGradePowderMetallurgy")
+@bp.route("/SearchByGradePowderMetallurgy")
 def SearchByGradePowderMetallurgy():
     return render_template("pages/SEARCH BY GRADE/SearchByGradePowderMetallurgy.html")
 
 
-@app.route("/SearchByGradePlastic")
+@bp.route("/SearchByGradePlastic")
 def SearchByGradePlastic():
     return render_template("pages/SEARCH BY GRADE/SearchByGradePlastic.html")
 
@@ -303,9 +212,9 @@ def get_line(sql, xaxis_name, yaxis_name) -> Line:
     return c
 
 
-@app.route("/DetailsofGrade/<gradeNum>/<densityNum>/<pages>", methods=['GET', 'POST'])
+@bp.route("/DetailsofGrade/<gradeNum>/<densityNum>/<pages>", methods=['GET', 'POST'])
 def DetailsofGrade(gradeNum, densityNum, pages):
-    app.config['UPLOADED_PATH'] = os.path.join(basedir, '../Data/uploads/', gradeNum)
+    current_app.config['UPLOADED_PATH'] = os.path.join(basedir, '../Data/uploads/', gradeNum)
 
     title = str(gradeNum)
     body = Detail.query.filter(Detail.title == gradeNum).first()
@@ -371,77 +280,76 @@ def DetailsofGrade(gradeNum, densityNum, pages):
                                )
 
 
-@app.route("/PropertySearch")
+@bp.route("/PropertySearch")
 def PropertySearch():
     return render_template("pages/ADVANCED SEARCH/PropertySearch.html")
 
 
-@app.route("/ShowSavedSearch")
+@bp.route("/ShowSavedSearch")
 def ShowSavedSearch():
     return render_template("pages/ADVANCED SEARCH/ShowSavedSearch.html")
 
 
-@app.route("/ClearsTheSavedSearch")
+@bp.route("/ClearsTheSavedSearch")
 def ClearsTheSavedSearch():
     return render_template("pages/ADVANCED SEARCH/ClearsTheSavedSearch.html")
 
 
-@app.route("/ViewLastSearchResults")
+@bp.route("/ViewLastSearchResults")
 def ViewLastSearchResults():
     return render_template("pages/ADVANCED SEARCH/ViewLastSearchResults.html")
 
 
-@app.route("/help_on_plotting")
+@bp.route("/help_on_plotting")
 def help_on_plotting():
     return render_template("pages/help/help_on_plotting.html")
 
 
-@app.route("/help_on_reports")
+@bp.route("/help_on_reports")
 def help_on_reports():
     return render_template("pages/help/help_on_reports.html")
 
 
-@app.route("/help")
+@bp.route("/help")
 def help():
     return render_template("pages/help/help.html")
 
 
-@app.route("/view_data_cart")
+@bp.route("/view_data_cart")
 def view_data_cart():
     return render_template("pages/data/view_data_cart.html")
 
 
-@app.route("/empty_data_cart")
+@bp.route("/empty_data_cart")
 def empty_data_cart():
     return render_template("pages/data/empty_data_cart.html")
 
 
-@app.route("/SelectPropertiesForCrossPlot")
+@bp.route("/SelectPropertiesForCrossPlot")
 def SelectPropertiesForCrossPlot():
     return render_template("pages/PLOT/SelectPropertiesForCrossPlot.html")
 
 
-@app.route("/ShowCrossPlot", methods=['GET', 'POST'])
+@bp.route("/ShowCrossPlot", methods=['GET', 'POST'])
 def ShowCrossPlot():
     return render_template("pages/PLOT/ShowCrossPlot.html")
 
 
-@app.route('/files/<filename>')
+@bp.route('/files/<filename>')
 def uploaded_files(filename):
-    path = app.config['UPLOADED_PATH']
+    path = current_app.config['UPLOADED_PATH']
     return send_from_directory(path, filename)
 
 
-@app.route('/upload', methods=['POST'])
+@bp.route('/upload', methods=['POST'])
 def upload():
     f = request.files.get('upload')
     extension = f.filename.split('.')[-1].lower()
     if extension not in ['jpg', 'gif', 'png', 'jpeg', 'pdf']:
         return upload_fail(message='Image only!')
-    f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
+    f.save(os.path.join(current_app.config['UPLOADED_PATH'], f.filename))
     url = url_for('uploaded_files', filename=f.filename)
     return upload_success(url=url)
-
 
 
 @bp.before_app_request
@@ -451,7 +359,6 @@ def before_request():
         db.session.commit()
         g.search_form = SearchForm()
     g.locale = str(get_locale())
-
 
 
 @bp.route('/search')
