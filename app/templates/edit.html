@@ -1,0 +1,7 @@
+{% extends "menu.html" %}
+{% block content %}
+    {{ super() }}
+    {{ ckeditor.load() }}
+    {# The name value should be the name of the CKEditor form field, here is `text`. #}
+    {{ ckeditor.config(name='text') }}
+{% endblock %}

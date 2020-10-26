@@ -1019,3 +1019,5 @@ Version: '5.7.22-log'  socket: ''  port: 3306  MySQL Community Server (GPL)
 2020-10-20T05:41:31.849810Z 0 [Note] Event Scheduler: Loaded 0 events
 2020-10-20T05:41:31.865447Z 0 [Note] C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe: ready for connections.
 Version: '5.7.22-log'  socket: ''  port: 3306  MySQL Community Server (GPL)
+2020-10-23T09:41:06.297305Z 100 [Note] Aborted connection 100 to db: 'mysql' user: 'root' host: 'localhost' (Got an error reading communication packets)
+2020-10-23T09:41:06.297309Z 101 [Note] Aborted connection 101 to db: 'mysql' user: 'root' host: 'localhost' (Got an error reading communication packets)
