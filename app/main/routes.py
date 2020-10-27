@@ -214,11 +214,23 @@ def get_line(sql, xaxis_name, yaxis_name) -> Line:
 
 @bp.route("/DetailsofGrade/<gradeNum>/<densityNum>/<pages>", methods=['GET', 'POST'])
 def DetailsofGrade(gradeNum, densityNum, pages):
-    current_app.config['UPLOADED_PATH'] = os.path.join(basedir, '../Data/uploads/', gradeNum)
+    # WARNING: use bleach or something similar to clean the data (escape JavaScript code)
+    # You may need to store the data in database here
+    grade = request.form.get('Grade')
+    density = request.form.get('Density')
+    if grade is None:
+        grade = gradeNum
+    if density is None:
+        density = densityNum
+    # pages = pages
+    # print(grade, pages)
+    # print(densityNum)
+    print(pages)
+    current_app.config['UPLOADED_PATH'] = os.path.join(basedir, '../Data/uploads/', grade)
 
-    title = str(gradeNum)
-    body = Detail.query.filter(Detail.title == gradeNum).first()
-    form = PostForm(title=gradeNum, body=body.text)
+    title = str(grade)
+    body = Detail.query.filter(Detail.title == grade).first()
+    form = PostForm(title=grade, body=body.text)
     # form = PostForm(title=gradeNum)
 
     # print(form.validate_on_submit())
@@ -229,23 +241,13 @@ def DetailsofGrade(gradeNum, densityNum, pages):
     body.text = str(new_body)
     db.session.commit()
 
-    # WARNING: use bleach or something similar to clean the data (escape JavaScript code)
-    # You may need to store the data in database here
-    grade = request.form.get('Grade')
-    density = request.form.get('Density')
-    if grade is None:
-        grade = gradeNum
-    if density is None:
-        density = densityNum
-    pages = pages
-    # print(grade, pages)
-    # print(densityNum)
-    if str(densityNum) == "plastic":
+    if str(density) == "plastic":
         sql_ss = "select 应变" + pages + ",应力" + pages + " from " + str(grade) + "_ss"
         sql_ss_num = "select count(1) from information_schema.COLUMNS where TABLE_SCHEMA='python_mysql' and " \
                      "TABLE_NAME='" + str(grade) + "_ss'"
     else:
         sql_ss = "select 应变" + pages + ",应力" + pages + " from " + str(grade) + str(density) + "_ss"
+        # print(sql_ss)
         sql_ss_num = "select count(1) from information_schema.`COLUMNS` where TABLE_SCHEMA='python_mysql' and " \
                      "TABLE_NAME='" + str(grade) + str(density) + "_ss'"
     sql_pr = "select 轴向伸长量,横向减少量 from " + str(grade) + "_pr"
@@ -255,7 +257,7 @@ def DetailsofGrade(gradeNum, densityNum, pages):
     ss_num = ss_num[0] // 2
     # print(ss_num)
     line_ss = get_line(sql_ss, "应变", "应力")
-    if str(densityNum) == "plastic":
+    if str(density) == "plastic":
         line_pr = get_line(sql_pr, "轴向伸长量", "横向减少量")
 
         return render_template("pages/SEARCH BY GRADE/DetailsofGrade.html",
