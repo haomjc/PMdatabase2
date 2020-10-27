@@ -225,8 +225,8 @@ def DetailsofGrade(gradeNum, densityNum, pages):
     # pages = pages
     # print(grade, pages)
     # print(densityNum)
-    print(pages)
-    current_app.config['UPLOADED_PATH'] = os.path.join(basedir, '../Data/uploads/', grade)
+
+    current_app.config['UPLOADED_PATH'] = os.path.join(basedir, '../../Data/uploads/', grade)
 
     title = str(grade)
     body = Detail.query.filter(Detail.title == grade).first()
@@ -255,7 +255,7 @@ def DetailsofGrade(gradeNum, densityNum, pages):
     ss_num = db_manage.query_data(sql_ss_num)
     ss_num = [list(num.values())[0] for num in ss_num]
     ss_num = ss_num[0] // 2
-    # print(ss_num)
+
     line_ss = get_line(sql_ss, "应变", "应力")
     if str(density) == "plastic":
         line_pr = get_line(sql_pr, "轴向伸长量", "横向减少量")
