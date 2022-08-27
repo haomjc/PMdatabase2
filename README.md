@@ -1,7 +1,10 @@
 # PMdatabase2
 
 Material database for the mechanical design of components made of powder metallurgy material
+
 https://doi.org/10.36227/techrxiv.20485887
+
+Powder metallurgy database website
 
 https://pmdatabase.xyz
 
