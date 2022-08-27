@@ -1,4 +1,8 @@
 # PMdatabase2
+
+Material database for the mechanical design of components made of powder metallurgy material
+https://doi.org/10.36227/techrxiv.20485887
+
 https://pmdatabase.xyz
 
 The powder metallurgy database is a data system for effective management of powder metallurgy information. With the development of information technology, its construction scale and quality will directly affect the convenient inquiry of powder metallurgy information, the selection of gear materials, the research and development and engineering application of micro-drive systems, and have engineering significance and market value. However, the groundwork in this field still lags behind other materials fields and needs to be developed systematically.
